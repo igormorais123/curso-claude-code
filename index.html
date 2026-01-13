@@ -1123,6 +1123,701 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--border-dark);
         }
+
+        /* ═══════════════════════════════════════════════════════════════
+           COACH IA SYSTEM - CHAT & PRÁTICAS
+           ═══════════════════════════════════════════════════════════════ */
+
+        /* Botão Flutuante do Coach */
+        .coach-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #059669, #10B981);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(5, 150, 105, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-normal);
+            animation: coach-pulse 2s ease-in-out infinite;
+        }
+
+        .coach-fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(5, 150, 105, 0.5);
+        }
+
+        .coach-fab svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .coach-fab-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--error);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        @keyframes coach-pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(5, 150, 105, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(5, 150, 105, 0.6); }
+        }
+
+        /* Modal do Coach */
+        .coach-modal {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            width: 420px;
+            max-width: calc(100vw - 48px);
+            max-height: 70vh;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            z-index: 999;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+
+        .coach-modal.open {
+            display: flex;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .coach-header {
+            background: linear-gradient(135deg, #059669, #10B981);
+            color: white;
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .coach-avatar {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .coach-info h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .coach-info p {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        .coach-close {
+            margin-left: auto;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background var(--transition-fast);
+        }
+
+        .coach-close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .coach-close svg {
+            width: 18px;
+            height: 18px;
+            color: white;
+        }
+
+        /* Área de Chat */
+        .coach-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--space-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            min-height: 200px;
+            max-height: 350px;
+        }
+
+        .coach-message {
+            display: flex;
+            gap: var(--space-sm);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .coach-message.coach {
+            align-self: flex-start;
+        }
+
+        .coach-message.user {
+            align-self: flex-end;
+            flex-direction: row-reverse;
+        }
+
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--track-agentes-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .coach-message.user .message-avatar {
+            background: var(--accent-tertiary);
+        }
+
+        .message-bubble {
+            max-width: 80%;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .coach-message.coach .message-bubble {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border-bottom-left-radius: 4px;
+        }
+
+        .coach-message.user .message-bubble {
+            background: var(--accent-primary);
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message-bubble code {
+            background: rgba(0,0,0,0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.85em;
+        }
+
+        /* Input do Chat */
+        .coach-input-area {
+            padding: var(--space-md);
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .coach-input {
+            flex: 1;
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            resize: none;
+            min-height: 44px;
+            max-height: 120px;
+        }
+
+        .coach-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        .coach-send {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent-primary);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+        }
+
+        .coach-send:hover {
+            background: var(--accent-secondary);
+            transform: scale(1.05);
+        }
+
+        .coach-send:disabled {
+            background: var(--border-light);
+            cursor: not-allowed;
+        }
+
+        .coach-send svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+        }
+
+        /* Typing Indicator */
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: var(--space-sm) var(--space-md);
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: var(--text-tertiary);
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-8px); }
+        }
+
+        /* ═══════════════════════════════════════════════════════════════
+           TAREFA PRÁTICA - COMPONENTE
+           ═══════════════════════════════════════════════════════════════ */
+        .pratica-card {
+            background: linear-gradient(135deg, var(--track-agentes-bg), var(--bg-secondary));
+            border: 2px solid var(--track-agentes);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pratica-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--track-agentes), #10B981);
+        }
+
+        .pratica-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .pratica-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--track-agentes);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .pratica-title {
+            flex: 1;
+        }
+
+        .pratica-title h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--track-agentes);
+            margin-bottom: 4px;
+        }
+
+        .pratica-title p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pratica-badge {
+            background: var(--track-agentes);
+            color: white;
+            padding: 4px 12px;
+            border-radius: var(--radius-lg);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .pratica-content {
+            margin-bottom: var(--space-lg);
+        }
+
+        .pratica-instrucoes {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .pratica-instrucoes h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .pratica-instrucoes ol, .pratica-instrucoes ul {
+            margin-left: var(--space-lg);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .pratica-instrucoes li {
+            margin-bottom: var(--space-xs);
+        }
+
+        /* Área de Submissão */
+        .pratica-submit {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            border: 1px dashed var(--border-medium);
+        }
+
+        .pratica-submit label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+
+        .pratica-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: var(--space-md);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            resize: vertical;
+            margin-bottom: var(--space-md);
+        }
+
+        .pratica-textarea:focus {
+            outline: none;
+            border-color: var(--track-agentes);
+        }
+
+        .pratica-actions {
+            display: flex;
+            gap: var(--space-sm);
+            flex-wrap: wrap;
+        }
+
+        .pratica-btn {
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            border: none;
+        }
+
+        .pratica-btn.primary {
+            background: var(--track-agentes);
+            color: white;
+        }
+
+        .pratica-btn.primary:hover {
+            background: #047857;
+            transform: translateY(-1px);
+        }
+
+        .pratica-btn.secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-light);
+        }
+
+        .pratica-btn.secondary:hover {
+            background: var(--accent-tertiary);
+            border-color: var(--accent-primary);
+        }
+
+        /* Status da Tarefa */
+        .pratica-status {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-md);
+        }
+
+        .pratica-status.pending {
+            background: var(--warning-bg);
+            color: var(--warning);
+        }
+
+        .pratica-status.completed {
+            background: var(--success-bg);
+            color: var(--success);
+        }
+
+        .pratica-status.error {
+            background: var(--error-bg);
+            color: var(--error);
+        }
+
+        .pratica-status-icon {
+            font-size: 1.2rem;
+        }
+
+        .pratica-status-text {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        /* Feedback do Coach */
+        .pratica-feedback {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--track-agentes);
+            padding: var(--space-md);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            margin-top: var(--space-md);
+        }
+
+        .pratica-feedback-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+            color: var(--track-agentes);
+        }
+
+        .pratica-feedback-content {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Quick Actions */
+        .pratica-quick-actions {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .quick-action-btn {
+            padding: var(--space-xs) var(--space-md);
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .quick-action-btn:hover {
+            background: var(--accent-tertiary);
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        /* Checkpoint/Marco */
+        .checkpoint-card {
+            background: linear-gradient(135deg, #FEF3C7, var(--bg-secondary));
+            border: 2px solid var(--warning);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin: var(--space-2xl) 0;
+            text-align: center;
+        }
+
+        .checkpoint-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-lg);
+            background: var(--warning);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .checkpoint-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .checkpoint-desc {
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .checkpoint-requirements {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            text-align: left;
+            margin-bottom: var(--space-lg);
+        }
+
+        .checkpoint-req-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .checkpoint-req-item:last-child {
+            border-bottom: none;
+        }
+
+        .checkpoint-req-status {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .checkpoint-req-status.done {
+            background: var(--success-bg);
+            color: var(--success);
+        }
+
+        .checkpoint-req-status.pending {
+            background: var(--warning-bg);
+            color: var(--warning);
+        }
+
+        /* API Key Config */
+        .api-config {
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .api-config-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--space-sm);
+        }
+
+        .api-config-header h5 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .api-config-input {
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .api-config-hint {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            margin-top: var(--space-xs);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .coach-modal {
+                bottom: 0;
+                right: 0;
+                left: 0;
+                width: 100%;
+                max-width: 100%;
+                max-height: 80vh;
+                border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+            }
+
+            .coach-fab {
+                bottom: 16px;
+                right: 16px;
+                width: 56px;
+                height: 56px;
+            }
+
+            .pratica-actions {
+                flex-direction: column;
+            }
+
+            .pratica-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1349,7 +2044,53 @@
             <!-- Content will be loaded dynamically -->
         </main>
     </div>
-    
+
+    <!-- COACH IA - Botão Flutuante e Modal -->
+    <button class="coach-fab" id="coachFab" onclick="toggleCoach()" title="Fale com o Coach IA">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            <circle cx="12" cy="10" r="1" fill="currentColor"/>
+            <circle cx="8" cy="10" r="1" fill="currentColor"/>
+            <circle cx="16" cy="10" r="1" fill="currentColor"/>
+        </svg>
+    </button>
+
+    <div class="coach-modal" id="coachModal">
+        <div class="coach-header">
+            <div class="coach-avatar">🤖</div>
+            <div class="coach-info">
+                <h3>Coach IA</h3>
+                <p>Seu assistente de aprendizagem</p>
+            </div>
+            <button class="coach-close" onclick="toggleCoach()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="coach-messages" id="coachMessages">
+            <!-- Mensagens serão adicionadas dinamicamente -->
+        </div>
+
+        <div class="api-config" id="apiConfig">
+            <div class="api-config-header">
+                <h5>🔑 Configurar API (Opcional)</h5>
+            </div>
+            <input type="password" class="api-config-input" id="apiKeyInput" placeholder="sk-ant-api..." onchange="saveApiKey(this.value)">
+            <p class="api-config-hint">Cole sua chave da Anthropic para respostas personalizadas. Sem chave, usaremos respostas pré-programadas.</p>
+        </div>
+
+        <div class="coach-input-area">
+            <textarea class="coach-input" id="coachInput" placeholder="Digite sua dúvida ou cole seu resultado aqui..." rows="1" onkeydown="handleCoachKeydown(event)"></textarea>
+            <button class="coach-send" id="coachSend" onclick="sendCoachMessage()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
     <script>
         // ═══════════════════════════════════════════════════════════════
         // STATE MANAGEMENT
@@ -2769,7 +3510,55 @@ em formato estruturado para análise posterior.</code></pre>
                         </div>
                     </div>
                 </div>
-                
+
+                <!-- TAREFA PRÁTICA OBRIGATÓRIA -->
+                <div class="pratica-card" id="pratica-p1-instalacao">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">🎯</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática Obrigatória</h4>
+                            <p>Prove que você completou a instalação!</p>
+                        </div>
+                        <span class="pratica-badge">+50 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Abra o terminal (PowerShell, Terminal ou CMD)</li>
+                                <li>Execute os comandos: <code>node --version</code> e <code>npm --version</code></li>
+                                <li>Execute: <code>claude --version</code></li>
+                                <li>Cole TODOS os resultados no campo abaixo</li>
+                            </ol>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole aqui a saída dos comandos:</label>
+                            <textarea class="pratica-textarea" placeholder="Exemplo do que você deve colar:\n\n$ node --version\nv20.10.0\n\n$ npm --version\n10.2.3\n\n$ claude --version\n1.0.5"></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('p1-instalacao')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('p1-instalacao')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">⏳</span>
+                            <span class="pratica-status-text">Aguardando sua submissão para liberar o próximo módulo</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='O que é node --version?';">O que é node?</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Deu erro ao instalar o Claude Code';">Deu erro</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Como abro o PowerShell?';">Abrir terminal</button>
+                    </div>
+                </div>
+
                 <div class="nav-buttons">
                     <a class="nav-btn prev" onclick="loadModule('m1')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3230,6 +4019,63 @@ em formato estruturado para análise posterior.</code></pre>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- TAREFA PRÁTICA: PRIMEIRA CONVERSA -->
+                <div class="pratica-card" id="pratica-p2-conversa">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">💬</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática: Sua Primeira Conversa</h4>
+                            <p>Converse com o Claude e mostre que funcionou!</p>
+                        </div>
+                        <span class="pratica-badge">+75 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Abra uma pasta de projeto no terminal</li>
+                                <li>Digite <code>claude</code> para iniciar uma sessão</li>
+                                <li>Peça algo simples como: "Liste 3 ideias de projetos para iniciantes"</li>
+                                <li>Copie a interação completa (sua pergunta + resposta do Claude)</li>
+                                <li>Cole no campo abaixo</li>
+                            </ol>
+                        </div>
+
+                        <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-content">
+                                <div class="tip-title">Dica do Coach</div>
+                                <p>Se o Claude pedir autorização para algo, digite <code>y</code> para sim. É normal ele pedir permissão para executar ações.</p>
+                            </div>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole aqui sua primeira conversa com o Claude:</label>
+                            <textarea class="pratica-textarea" placeholder="Cole aqui a interação. Exemplo:\n\n> Liste 3 ideias de projetos para iniciantes\n\nClaro! Aqui estão 3 ideias de projetos:\n1. Um conversor de temperatura...\n2. Uma lista de tarefas...\n3. Um calculador de idade..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('p2-conversa')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('p2-conversa')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">⏳</span>
+                            <span class="pratica-status-text">Complete esta prática para ganhar XP e desbloquear conquistas!</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='O Claude não está respondendo';">Não responde</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='O que devo perguntar para o Claude?';">O que perguntar?</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Erro de API key';">Erro de API</button>
                     </div>
                 </div>
 
@@ -6653,6 +7499,63 @@ Salve em scripts/monitor-recursos.ps1</code></pre>
                     </div>
                 </div>
 
+                <!-- TAREFA PRÁTICA: PRIMEIRO AGENTE -->
+                <div class="pratica-card" id="pratica-ag1-agente">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">🤖</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática: Crie Seu Primeiro Agente</h4>
+                            <p>Transforme uma ideia em um agente funcional!</p>
+                        </div>
+                        <span class="pratica-badge">+100 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Pense em um perfil de pessoa (ex: médico, advogado, estudante, empreendedor)</li>
+                                <li>Use o Claude Code para criar uma descrição detalhada desse agente</li>
+                                <li>Inclua: nome, idade, profissão, personalidade, objetivos</li>
+                                <li>Peça ao Claude para simular uma resposta desse agente a uma pergunta</li>
+                                <li>Cole aqui a descrição do agente E a resposta simulada</li>
+                            </ol>
+                        </div>
+
+                        <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-content">
+                                <div class="tip-title">Exemplo de Prompt</div>
+                                <p>"Crie um agente chamado Maria, 35 anos, médica pediatra de Brasília, preocupada com saúde pública. Depois simule como ela responderia à pergunta: O que você acha do atendimento no SUS?"</p>
+                            </div>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole aqui a descrição do seu agente e a resposta simulada:</label>
+                            <textarea class="pratica-textarea" placeholder="Exemplo:\n\nAgente: Maria Silva\n- Idade: 35 anos\n- Profissão: Médica pediatra\n- Localização: Brasília/DF\n- Personalidade: Dedicada, pragmática, preocupada com saúde pública\n\nPergunta: O que você acha do atendimento no SUS?\n\nResposta de Maria:\n'Olha, trabalho no SUS há 10 anos e vejo dois lados...'"></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('ag1-agente')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('ag1-agente')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">⏳</span>
+                            <span class="pratica-status-text">Crie seu primeiro agente e veja a magia acontecer!</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Como criar um bom prompt para agente?';">Dicas de prompt</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Quais características devo incluir no agente?';">Características</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Mostre exemplos de agentes';">Ver exemplos</button>
+                    </div>
+                </div>
+
                 <div class="nav-buttons">
                     <a class="nav-btn prev" onclick="loadModule('m0')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -8216,12 +9119,407 @@ Salve em resultados/relatorio-qualitativo.md</code></pre>
                 </div>
             `
         };
-        
+
+        // ═══════════════════════════════════════════════════════════════
+        // COACH IA SYSTEM
+        // ═══════════════════════════════════════════════════════════════
+        const COACH_STATE_KEY = 'coachIAState';
+        let coachState = {
+            messages: [],
+            apiKey: '',
+            praticasCompletas: {},
+            conversationHistory: []
+        };
+
+        // Contexto do curso por módulo
+        const MODULE_CONTEXT = {
+            'm0': 'Módulo 0: Introdução ao Claude Code - O que é IA agêntica, diferença do ChatGPT, conceitos básicos',
+            'm1': 'Módulo 1: Instalação do Claude Code - Node.js, npm, configuração inicial',
+            'm2': 'Módulo 2: Primeiros Passos - Comandos básicos, interface do terminal',
+            'm3': 'Módulo 3: Configuração Avançada - CLAUDE.md, permissões, customização',
+            'm4': 'Módulo 4: VS Code Integration - Extensão, atalhos, integração',
+            'j1': 'Trilha Jurídica: Petições - Criação de petições com IA',
+            'j2': 'Trilha Jurídica: Contratos - Análise e criação de contratos',
+            'j3': 'Trilha Jurídica: Pareceres - Elaboração de pareceres jurídicos',
+            'ag1': 'Agentes: Introdução - O que são agentes generativos',
+            'ag2': 'Agentes: Criação - Como criar agentes especializados',
+            'ag3': 'Agentes: Orquestração - Múltiplos agentes trabalhando juntos',
+            'ag4': 'Agentes: Personas - Criando personalidades para agentes',
+            'ag5': 'Agentes: Entrevistas - Conduzindo entrevistas com agentes',
+            'ag6': 'Agentes: Análise - Analisando resultados de simulações'
+        };
+
+        // Respostas pré-programadas por categoria (fallback sem API)
+        const COACH_RESPONSES = {
+            instalacao: [
+                "Para instalar o Claude Code, você precisa:\n1. Ter o Node.js instalado (versão 18+)\n2. Abrir o terminal\n3. Executar: npm install -g @anthropic-ai/claude-code\n4. Configurar sua API key da Anthropic\n\nSe tiver algum erro, me conte qual aparece!",
+                "Problemas na instalação geralmente são:\n• Node.js não instalado ou versão antiga\n• Permissões de administrador\n• Firewall bloqueando\n\nQual erro você está vendo?"
+            ],
+            erro: [
+                "Entendi que você está tendo um erro. Para te ajudar melhor, pode me enviar:\n1. A mensagem de erro completa\n2. O comando que você executou\n3. Qual sistema operacional usa (Windows, Mac, Linux)",
+                "Erros são normais no início! Vamos resolver juntos. Cole aqui a mensagem de erro e me diga em qual passo do curso você está."
+            ],
+            conceito: [
+                "O Claude Code é diferente do ChatGPT normal porque ele pode EXECUTAR ações no seu computador:\n• Criar e editar arquivos\n• Rodar comandos no terminal\n• Navegar na web\n• Criar agentes especializados\n\nÉ como ter um assistente que realmente faz as coisas, não só explica!",
+                "Agentes generativos são programas de IA que podem:\n• Tomar decisões por conta própria\n• Executar tarefas complexas\n• Simular comportamentos humanos\n• Trabalhar em conjunto com outros agentes"
+            ],
+            pratica: [
+                "Excelente que você está fazendo a prática! Para validar, preciso ver:\n1. O comando que você executou\n2. A saída/resultado que apareceu\n3. Se houve algum erro\n\nCole aqui o que você fez!",
+                "Ótimo! Práticas são a melhor forma de aprender. Me mostre o resultado que você obteve e vou te dar feedback!"
+            ],
+            duvida: [
+                "Boa pergunta! Pode me dar mais detalhes sobre:\n• Em qual parte do curso você está?\n• O que você já tentou fazer?\n• Qual resultado esperava?\n\nAssim consigo te ajudar melhor!",
+                "Entendi sua dúvida. Vamos por partes para não complicar. Qual é o primeiro ponto que não ficou claro?"
+            ],
+            motivacao: [
+                "Você está indo muito bem! Aprender IA agêntica é um diferencial enorme no mercado. Continue praticando que logo você estará criando seus próprios agentes!",
+                "Normal sentir dificuldade no começo. O importante é não desistir! Cada erro é uma oportunidade de aprendizado. Em que posso te ajudar agora?"
+            ],
+            default: [
+                "Estou aqui para te ajudar! Pode me contar:\n• Sua dúvida específica\n• Colar um resultado de prática\n• Pedir explicação sobre algum conceito\n\nComo coach, meu objetivo é garantir que você realmente aprenda!",
+                "Oi! Sou seu Coach IA do curso. Posso te ajudar com:\n• Dúvidas sobre os módulos\n• Verificar suas práticas\n• Explicar conceitos\n• Resolver erros\n\nO que você precisa?"
+            ]
+        };
+
+        function loadCoachState() {
+            try {
+                const saved = localStorage.getItem(COACH_STATE_KEY);
+                if (saved) {
+                    coachState = { ...coachState, ...JSON.parse(saved) };
+                    if (coachState.apiKey) {
+                        document.getElementById('apiKeyInput').value = '••••••••••••';
+                    }
+                }
+            } catch (e) {
+                console.warn('Erro ao carregar estado do coach:', e);
+            }
+        }
+
+        function saveCoachState() {
+            try {
+                localStorage.setItem(COACH_STATE_KEY, JSON.stringify(coachState));
+            } catch (e) {
+                console.warn('Erro ao salvar estado do coach:', e);
+            }
+        }
+
+        function toggleCoach() {
+            const modal = document.getElementById('coachModal');
+            modal.classList.toggle('open');
+
+            if (modal.classList.contains('open') && coachState.messages.length === 0) {
+                // Mensagem de boas-vindas
+                const moduleInfo = MODULE_CONTEXT[state.currentModule] || 'curso';
+                addCoachMessage('coach', `Olá! Sou seu Coach IA! 🤖\n\nVejo que você está no ${moduleInfo}.\n\nComo posso te ajudar?\n• Tire dúvidas sobre o conteúdo\n• Cole resultados de práticas para eu avaliar\n• Peça explicações mais simples\n• Relate erros que encontrou`);
+            }
+        }
+
+        function addCoachMessage(type, content) {
+            const messagesContainer = document.getElementById('coachMessages');
+            const message = document.createElement('div');
+            message.className = `coach-message ${type}`;
+
+            const avatar = type === 'coach' ? '🤖' : '👤';
+
+            message.innerHTML = `
+                <div class="message-avatar">${avatar}</div>
+                <div class="message-bubble">${formatCoachMessage(content)}</div>
+            `;
+
+            messagesContainer.appendChild(message);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            coachState.messages.push({ type, content, timestamp: Date.now() });
+            saveCoachState();
+        }
+
+        function formatCoachMessage(text) {
+            // Converte quebras de linha e formata código
+            return text
+                .replace(/\n/g, '<br>')
+                .replace(/`([^`]+)`/g, '<code>$1</code>')
+                .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+        }
+
+        function showTypingIndicator() {
+            const messagesContainer = document.getElementById('coachMessages');
+            const typing = document.createElement('div');
+            typing.className = 'coach-message coach';
+            typing.id = 'typingIndicator';
+            typing.innerHTML = `
+                <div class="message-avatar">🤖</div>
+                <div class="message-bubble">
+                    <div class="typing-indicator">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            `;
+            messagesContainer.appendChild(typing);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function hideTypingIndicator() {
+            const typing = document.getElementById('typingIndicator');
+            if (typing) typing.remove();
+        }
+
+        function handleCoachKeydown(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendCoachMessage();
+            }
+        }
+
+        async function sendCoachMessage() {
+            const input = document.getElementById('coachInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // Adiciona mensagem do usuário
+            addCoachMessage('user', message);
+            input.value = '';
+
+            // Mostra indicador de digitação
+            showTypingIndicator();
+
+            try {
+                let response;
+
+                if (coachState.apiKey) {
+                    // Usa API da Anthropic
+                    response = await getClaudeResponse(message);
+                } else {
+                    // Usa respostas pré-programadas
+                    response = getLocalResponse(message);
+                }
+
+                hideTypingIndicator();
+                addCoachMessage('coach', response);
+
+            } catch (error) {
+                hideTypingIndicator();
+                addCoachMessage('coach', `Desculpe, tive um problema ao processar sua mensagem. Erro: ${error.message}\n\nTente novamente ou verifique sua chave de API.`);
+            }
+        }
+
+        function getLocalResponse(message) {
+            const lowerMsg = message.toLowerCase();
+
+            // Detecta categoria da mensagem
+            if (lowerMsg.includes('instalar') || lowerMsg.includes('instalação') || lowerMsg.includes('npm') || lowerMsg.includes('node')) {
+                return COACH_RESPONSES.instalacao[Math.floor(Math.random() * COACH_RESPONSES.instalacao.length)];
+            }
+            if (lowerMsg.includes('erro') || lowerMsg.includes('error') || lowerMsg.includes('falha') || lowerMsg.includes('não funciona')) {
+                return COACH_RESPONSES.erro[Math.floor(Math.random() * COACH_RESPONSES.erro.length)];
+            }
+            if (lowerMsg.includes('o que é') || lowerMsg.includes('como funciona') || lowerMsg.includes('diferença') || lowerMsg.includes('agente')) {
+                return COACH_RESPONSES.conceito[Math.floor(Math.random() * COACH_RESPONSES.conceito.length)];
+            }
+            if (lowerMsg.includes('resultado') || lowerMsg.includes('fiz') || lowerMsg.includes('prática') || lowerMsg.includes('executei') || lowerMsg.includes('saída')) {
+                return COACH_RESPONSES.pratica[Math.floor(Math.random() * COACH_RESPONSES.pratica.length)];
+            }
+            if (lowerMsg.includes('não entendi') || lowerMsg.includes('dúvida') || lowerMsg.includes('explica') || lowerMsg.includes('como')) {
+                return COACH_RESPONSES.duvida[Math.floor(Math.random() * COACH_RESPONSES.duvida.length)];
+            }
+            if (lowerMsg.includes('difícil') || lowerMsg.includes('desistir') || lowerMsg.includes('não consigo') || lowerMsg.includes('travado')) {
+                return COACH_RESPONSES.motivacao[Math.floor(Math.random() * COACH_RESPONSES.motivacao.length)];
+            }
+
+            return COACH_RESPONSES.default[Math.floor(Math.random() * COACH_RESPONSES.default.length)];
+        }
+
+        async function getClaudeResponse(message) {
+            const moduleContext = MODULE_CONTEXT[state.currentModule] || 'curso de Claude Code';
+
+            const systemPrompt = `Você é um Coach IA amigável para um curso de Claude Code e Agentes Generativos.
+
+O aluno está atualmente no: ${moduleContext}
+
+Seu papel:
+1. Responder dúvidas de forma simples e didática
+2. Avaliar práticas que o aluno cole (dar feedback construtivo)
+3. Motivar e encorajar o aprendizado
+4. Ajudar a resolver erros
+5. Explicar conceitos de forma clara para iniciantes
+
+Regras:
+- Use português brasileiro
+- Seja conciso mas completo
+- Use emojis com moderação
+- Dê exemplos práticos
+- Se o aluno colar código/resultado, avalie e dê feedback específico
+- Sempre sugira o próximo passo`;
+
+            // Mantém histórico de conversa
+            coachState.conversationHistory.push({
+                role: 'user',
+                content: message
+            });
+
+            const response = await fetch('https://api.anthropic.com/v1/messages', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-api-key': coachState.apiKey,
+                    'anthropic-version': '2023-06-01',
+                    'anthropic-dangerous-direct-browser-access': 'true'
+                },
+                body: JSON.stringify({
+                    model: 'claude-3-haiku-20240307',
+                    max_tokens: 1024,
+                    system: systemPrompt,
+                    messages: coachState.conversationHistory.slice(-10) // Últimas 10 mensagens
+                })
+            });
+
+            if (!response.ok) {
+                const error = await response.json();
+                throw new Error(error.error?.message || 'Erro na API');
+            }
+
+            const data = await response.json();
+            const assistantMessage = data.content[0].text;
+
+            coachState.conversationHistory.push({
+                role: 'assistant',
+                content: assistantMessage
+            });
+
+            saveCoachState();
+            return assistantMessage;
+        }
+
+        function saveApiKey(key) {
+            if (key && key.startsWith('sk-ant')) {
+                coachState.apiKey = key;
+                saveCoachState();
+                addCoachMessage('coach', '✅ Chave de API salva! Agora suas respostas serão personalizadas pelo Claude. Pode me perguntar qualquer coisa!');
+            } else if (key) {
+                addCoachMessage('coach', '⚠️ A chave não parece válida. Ela deve começar com "sk-ant". Verifique e tente novamente.');
+            }
+        }
+
+        // ═══════════════════════════════════════════════════════════════
+        // SISTEMA DE PRÁTICAS
+        // ═══════════════════════════════════════════════════════════════
+        function submitPratica(praticaId) {
+            const textarea = document.querySelector(`#pratica-${praticaId} .pratica-textarea`);
+            const statusDiv = document.querySelector(`#pratica-${praticaId} .pratica-status`);
+            const feedbackDiv = document.querySelector(`#pratica-${praticaId} .pratica-feedback`);
+
+            if (!textarea || !textarea.value.trim()) {
+                if (statusDiv) {
+                    statusDiv.className = 'pratica-status error';
+                    statusDiv.innerHTML = `
+                        <span class="pratica-status-icon">⚠️</span>
+                        <span class="pratica-status-text">Cole seu resultado ou código antes de enviar!</span>
+                    `;
+                }
+                return;
+            }
+
+            const resultado = textarea.value.trim();
+
+            // Salva a prática
+            coachState.praticasCompletas[praticaId] = {
+                resultado,
+                timestamp: Date.now(),
+                avaliado: false
+            };
+            saveCoachState();
+
+            // Atualiza status
+            if (statusDiv) {
+                statusDiv.className = 'pratica-status completed';
+                statusDiv.innerHTML = `
+                    <span class="pratica-status-icon">✅</span>
+                    <span class="pratica-status-text">Prática enviada! O Coach IA está avaliando...</span>
+                `;
+            }
+
+            // Abre o coach com contexto da prática
+            toggleCoach();
+
+            // Envia para avaliação
+            const praticaInfo = PRATICAS_INFO[praticaId] || { titulo: 'Prática', descricao: '' };
+            const mensagemAvaliacao = `Olá Coach! Acabei de fazer a prática "${praticaInfo.titulo}".
+
+Descrição da tarefa: ${praticaInfo.descricao}
+
+Meu resultado:
+\`\`\`
+${resultado}
+\`\`\`
+
+Pode avaliar se fiz certo?`;
+
+            document.getElementById('coachInput').value = mensagemAvaliacao;
+            sendCoachMessage();
+        }
+
+        function askCoachAboutPratica(praticaId) {
+            const praticaInfo = PRATICAS_INFO[praticaId] || { titulo: 'esta prática', descricao: '' };
+
+            toggleCoach();
+
+            addCoachMessage('user', `Estou com dificuldade na prática "${praticaInfo.titulo}". ${praticaInfo.descricao}`);
+
+            setTimeout(() => {
+                if (coachState.apiKey) {
+                    sendCoachMessage();
+                } else {
+                    addCoachMessage('coach', `Entendi! A prática "${praticaInfo.titulo}" pode parecer difícil no início. Vamos por partes:\n\n1. Você já tem o ambiente configurado?\n2. Qual parte específica está travando?\n3. Aparece algum erro?\n\nMe conta mais detalhes para eu poder te ajudar!`);
+                }
+            }, 500);
+        }
+
+        // Info das práticas do curso
+        const PRATICAS_INFO = {
+            'p1-instalacao': {
+                titulo: 'Verificar Instalação do Node.js',
+                descricao: 'Execute "node --version" e "npm --version" no terminal e cole o resultado.'
+            },
+            'p1-claude': {
+                titulo: 'Instalar Claude Code',
+                descricao: 'Execute "npm install -g @anthropic-ai/claude-code" e cole o resultado.'
+            },
+            'p2-primeiro-comando': {
+                titulo: 'Primeiro Comando Claude',
+                descricao: 'Execute "claude --help" e cole a saída.'
+            },
+            'p2-conversa': {
+                titulo: 'Primeira Conversa',
+                descricao: 'Inicie uma sessão com "claude" e peça algo simples. Cole a interação.'
+            },
+            'p3-claude-md': {
+                titulo: 'Criar CLAUDE.md',
+                descricao: 'Crie um arquivo CLAUDE.md na raiz do seu projeto com suas configurações.'
+            },
+            'p4-vscode': {
+                titulo: 'Configurar VS Code',
+                descricao: 'Configure a extensão do Claude Code no VS Code e tire um print ou descreva.'
+            },
+            'ag1-agente': {
+                titulo: 'Criar Primeiro Agente',
+                descricao: 'Crie um agente simples seguindo o template do curso.'
+            },
+            'ag2-persona': {
+                titulo: 'Definir Persona',
+                descricao: 'Crie uma persona completa para um agente com características definidas.'
+            },
+            'ag3-entrevista': {
+                titulo: 'Conduzir Entrevista',
+                descricao: 'Execute uma entrevista com seu agente e cole o resultado.'
+            }
+        };
+
         // ═══════════════════════════════════════════════════════════════
         // INITIALIZATION
         // ═══════════════════════════════════════════════════════════════
         document.addEventListener('DOMContentLoaded', function() {
             loadState();
+            loadCoachState();
             setTheme(state.theme);
             loadModule(state.currentModule);
             
