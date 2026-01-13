@@ -1,0 +1,11 @@
+# Temp files
+tmpclaude-*
+nul
+*.tmp
+
+# Claude local settings
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
