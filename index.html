@@ -1332,13 +1332,13 @@
                     <li class="nav-item">
                         <a class="nav-link" data-module="t1" onclick="loadModule('t1')">
                             <span class="nav-status">○</span>
-                            <span>Revisão com Codex</span>
+                            <span>Revisão de Código</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-module="t2" onclick="loadModule('t2')">
                             <span class="nav-status">○</span>
-                            <span>🚨 Emergência</span>
+                            <span>Troubleshooting</span>
                         </a>
                     </li>
                 </ul>
@@ -6345,18 +6345,1247 @@ Salve em scripts/monitor-recursos.ps1</code></pre>
                     </a>
                 </div>
             `,
+            // ─────────────────────────────────────────────────────────────
+            // E2: ROTEIROS E PERSONAS
+            // ─────────────────────────────────────────────────────────────
             'e2': `
-                <nav class="breadcrumb"><a class="breadcrumb-link" onclick="loadModule('m0')">Início</a><span>›</span><span style="color: var(--track-entrevista);">Trilha Entrevistas</span><span>›</span><span class="breadcrumb-current">Roteiros e Personas</span></nav>
-                <div class="module-header" style="border-left: 4px solid var(--track-entrevista); padding-left: var(--space-md);"><span class="module-number" style="color: var(--track-entrevista);">E2</span><h1 class="module-title">Criando Roteiros e Personas</h1><p class="module-description">Use o Claude Code para criar roteiros de entrevista e simular personas.</p><div class="module-meta"><div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span>30 min</span></div></div></div>
-                <div class="step-card expanded"><div class="step-card-header" onclick="toggleCard(this)"><div class="step-checkbox" data-step="e2-1" onclick="event.stopPropagation(); toggleStep('e2-1')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="step-info"><div class="step-header-row"><span class="step-number">Passo 1</span><span class="priority-badge required">Obrigatório</span></div><h3 class="step-title">Criando Roteiro</h3><p class="step-summary">Gere perguntas profissionais</p></div><div class="step-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg></div></div><div class="step-card-body"><div class="step-content"><p>Use o Claude para criar roteiros:</p><div class="code-block"><div class="code-header"><span class="code-lang">Claude Code</span><button class="code-copy" onclick="copyCode(this, 'Crie um roteiro de entrevista semi-estruturada sobre [SEU TEMA]. 15-20 perguntas abertas.')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button></div><div class="code-content"><pre><code>Crie um roteiro de entrevista sobre [SEU TEMA]. 15-20 perguntas abertas.</code></pre></div></div></div></div></div>
-                <div class="step-card"><div class="step-card-header" onclick="toggleCard(this)"><div class="step-checkbox" data-step="e2-2" onclick="event.stopPropagation(); toggleStep('e2-2')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="step-info"><div class="step-header-row"><span class="step-number">Passo 2</span><span class="priority-badge required">Obrigatório</span></div><h3 class="step-title">Criando Personas</h3><p class="step-summary">Perfis realistas para teste</p></div><div class="step-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg></div></div><div class="step-card-body"><div class="step-content"><div class="code-block"><div class="code-header"><span class="code-lang">Claude Code</span><button class="code-copy" onclick="copyCode(this, 'Crie 5 personas diversas para [SEU PÚBLICO]. Inclua dados demográficos, motivações e dores.')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button></div><div class="code-content"><pre><code>Crie 5 personas diversas para [SEU PÚBLICO]. Inclua dados demográficos, motivações e dores.</code></pre></div></div></div></div></div>
-                <div class="step-card"><div class="step-card-header" onclick="toggleCard(this)"><div class="step-checkbox" data-step="e2-3" onclick="event.stopPropagation(); toggleStep('e2-3')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="step-info"><div class="step-header-row"><span class="step-number">Passo 3</span><span class="priority-badge highly">Importante</span></div><h3 class="step-title">Simulando Entrevista</h3><p class="step-summary">Teste com uma persona</p></div><div class="step-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg></div></div><div class="step-card-body"><div class="step-content"><div class="code-block"><div class="code-header"><span class="code-lang">Claude Code</span><button class="code-copy" onclick="copyCode(this, 'Simule entrevista. VOCÊ É: [PERSONA]. Responda o roteiro como essa pessoa responderia.')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button></div><div class="code-content"><pre><code>Simule entrevista. VOCÊ É: [PERSONA]. Responda como essa pessoa.</code></pre></div></div><div class="tip-box tip"><span class="tip-icon">💡</span><div class="tip-content"><div class="tip-title">Por que simular?</div><p>Ajuda a identificar perguntas confusas antes de entrevistar pessoas reais.</p></div></div></div></div></div>
-                <div class="step-card"><div class="step-card-header" onclick="toggleCard(this)"><div class="step-checkbox" data-step="e2-4" onclick="event.stopPropagation(); toggleStep('e2-4')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></div><div class="step-info"><div class="step-header-row"><span class="step-number">Passo 4</span><span class="priority-badge recommended">Recomendado</span></div><h3 class="step-title">Analisando Transcrições</h3><p class="step-summary">Extraia insights</p></div><div class="step-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M6 9l6 6 6-6"/></svg></div></div><div class="step-card-body"><div class="step-content"><div class="code-block"><div class="code-header"><span class="code-lang">Claude Code</span><button class="code-copy" onclick="copyCode(this, 'Analise as transcrições. Identifique temas, padrões, insights e citações.')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copiar</button></div><div class="code-content"><pre><code>Analise as transcrições. Identifique temas, padrões, insights e citações.</code></pre></div></div></div></div></div>
-                <div class="tip-box" style="border-left-color: var(--success); background: var(--success-bg); margin-top: var(--space-xl);"><span class="tip-icon">🎉</span><div class="tip-content"><div class="tip-title">Parabéns!</div><p>Você completou a Trilha de Entrevistas!</p></div></div>
-                <div class="nav-buttons"><a class="nav-btn prev" onclick="loadModule('e1')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Anterior</a><a class="nav-btn next" onclick="loadModule('m0')">Voltar ao Início<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-link" onclick="loadModule('m0')">Início</a>
+                    <span>›</span>
+                    <span style="color: var(--track-entrevista);">Trilha Entrevistas</span>
+                    <span>›</span>
+                    <span class="breadcrumb-current">Roteiros e Personas</span>
+                </nav>
+
+                <div class="module-header" style="border-left: 4px solid var(--track-entrevista); padding-left: var(--space-md);">
+                    <span class="module-number" style="color: var(--track-entrevista);">E2</span>
+                    <h1 class="module-title">Criando Roteiros e Personas</h1>
+                    <p class="module-description">
+                        Use o Claude Code para criar roteiros de entrevista profissionais,
+                        simular personas realistas e analisar transcrições de forma eficiente.
+                    </p>
+                    <div class="module-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>35 minutos</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <span>Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 1: CRIANDO UM ROTEIRO PROFISSIONAL -->
+                <div class="step-card expanded">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="e2-1" onclick="event.stopPropagation(); toggleStep('e2-1')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 1</span>
+                                <span class="priority-badge required">Obrigatório</span>
+                            </div>
+                            <h3 class="step-title">Criando um Roteiro Profissional</h3>
+                            <p class="step-summary">Gere perguntas estruturadas para sua pesquisa</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>
+                                Um bom roteiro de entrevista começa com perguntas de aquecimento,
+                                passa pelas questões centrais e termina com fechamento. Veja como pedir
+                                ao Claude:
+                            </p>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, 'Crie um roteiro de entrevista semi-estruturada sobre [SEU TEMA].\\n\\nEstrutura:\\n1. Perguntas de aquecimento (2-3)\\n2. Perguntas principais (10-12)\\n3. Perguntas de aprofundamento (3-4)\\n4. Fechamento (2)\\n\\nTodas as perguntas devem ser abertas e não-indutivas.')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Crie um roteiro de entrevista semi-estruturada sobre [SEU TEMA].
+
+Estrutura:
+1. Perguntas de aquecimento (2-3)
+2. Perguntas principais (10-12)
+3. Perguntas de aprofundamento (3-4)
+4. Fechamento (2)
+
+Todas as perguntas devem ser abertas e não-indutivas.</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="glossary-card">
+                                <div class="glossary-term">
+                                    <span class="glossary-icon">🔥</span>
+                                    Aquecimento
+                                </div>
+                                <p class="glossary-definition">
+                                    Perguntas fáceis para quebrar o gelo. Ex: "Conte um pouco sobre sua rotina."
+                                </p>
+                                <p class="glossary-analogy">
+                                    Como aquecer antes de correr - prepara o entrevistado para as perguntas difíceis.
+                                </p>
+                            </div>
+
+                            <div class="tip-box tip">
+                                <span class="tip-icon">💡</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Dica Profissional</div>
+                                    <p>
+                                        Inclua no seu pedido o <strong>objetivo da pesquisa</strong> e o
+                                        <strong>perfil do público</strong>. Quanto mais contexto, melhores
+                                        serão as perguntas geradas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 2: CRIANDO PERSONAS REALISTAS -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="e2-2" onclick="event.stopPropagation(); toggleStep('e2-2')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 2</span>
+                                <span class="priority-badge required">Obrigatório</span>
+                            </div>
+                            <h3 class="step-title">Criando Personas Realistas</h3>
+                            <p class="step-summary">Perfis detalhados para pré-teste do roteiro</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>
+                                Personas são perfis fictícios baseados em dados reais. Servem para
+                                testar seu roteiro antes de ir a campo.
+                            </p>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, 'Crie 5 personas diversas para pesquisa sobre [SEU TEMA].\\n\\nPara cada persona, inclua:\\n- Nome fictício e idade\\n- Profissão e renda aproximada\\n- Cidade/região\\n- Contexto familiar\\n- 3 motivações principais\\n- 3 frustrações/dores\\n- Como se informa (redes sociais, TV, etc.)\\n- Posicionamento sobre [TEMA]\\n\\nAs personas devem representar diferentes segmentos do público-alvo.')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Crie 5 personas diversas para pesquisa sobre [SEU TEMA].
+
+Para cada persona, inclua:
+- Nome fictício e idade
+- Profissão e renda aproximada
+- Cidade/região
+- Contexto familiar
+- 3 motivações principais
+- 3 frustrações/dores
+- Como se informa (redes sociais, TV, etc.)
+- Posicionamento sobre [TEMA]
+
+As personas devem representar diferentes segmentos do público-alvo.</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="tip-box warning">
+                                <span class="tip-icon">⚠️</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Diversidade é Fundamental</div>
+                                    <p>
+                                        Peça personas com diferentes idades, classes sociais, regiões e opiniões.
+                                        Personas muito parecidas não testam bem seu roteiro.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 3: SIMULANDO ENTREVISTAS -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="e2-3" onclick="event.stopPropagation(); toggleStep('e2-3')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 3</span>
+                                <span class="priority-badge highly">Importante</span>
+                            </div>
+                            <h3 class="step-title">Simulando Entrevistas com IA</h3>
+                            <p class="step-summary">Teste seu roteiro antes de ir a campo</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>
+                                Agora vamos fazer o Claude "incorporar" uma persona e responder ao
+                                seu roteiro. Isso ajuda a identificar problemas antes da pesquisa real.
+                            </p>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, 'Vamos simular uma entrevista.\\n\\nVOCÊ É: [COLE A PERSONA AQUI]\\n\\nINSTRUÇÕES:\\n- Responda como essa pessoa responderia\\n- Use o vocabulário e tom que ela usaria\\n- Seja consistente com suas motivações e frustrações\\n- Pode hesitar, divagar ou não saber responder como uma pessoa real\\n\\nVou fazer as perguntas uma a uma. Pronto?')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Vamos simular uma entrevista.
+
+VOCÊ É: [COLE A PERSONA AQUI]
+
+INSTRUÇÕES:
+- Responda como essa pessoa responderia
+- Use o vocabulário e tom que ela usaria
+- Seja consistente com suas motivações e frustrações
+- Pode hesitar, divagar ou não saber responder como pessoa real
+
+Vou fazer as perguntas uma a uma. Pronto?</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="tip-box tip">
+                                <span class="tip-icon">💡</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Por que simular?</div>
+                                    <p>
+                                        A simulação ajuda a descobrir: perguntas confusas, ordem ruim
+                                        das questões, temas que você esqueceu de abordar, e tempo
+                                        estimado da entrevista.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="checkpoint">
+                                <div class="checkpoint-header">
+                                    <span class="checkpoint-icon">🔍</span>
+                                    <span class="checkpoint-title">Checkpoint: Após a Simulação</span>
+                                </div>
+                                <p>Analise a simulação e ajuste seu roteiro. Pergunte-se:</p>
+                                <ul style="margin-left: var(--space-lg); margin-top: var(--space-sm);">
+                                    <li>Alguma pergunta foi mal interpretada?</li>
+                                    <li>Faltou algum tema importante?</li>
+                                    <li>A ordem das perguntas faz sentido?</li>
+                                    <li>As respostas trazem informações úteis?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 4: ANALISANDO TRANSCRIÇÕES -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="e2-4" onclick="event.stopPropagation(); toggleStep('e2-4')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 4</span>
+                                <span class="priority-badge required">Obrigatório</span>
+                            </div>
+                            <h3 class="step-title">Analisando Transcrições Reais</h3>
+                            <p class="step-summary">Extraia insights das entrevistas</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>
+                                Depois de fazer entrevistas reais, use o Claude para ajudar na análise.
+                                Coloque os arquivos de transcrição na pasta do projeto.
+                            </p>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, 'Analise as transcrições de entrevista na pasta /transcricoes.\\n\\nIdentifique:\\n1. TEMAS PRINCIPAIS - Assuntos que aparecem em múltiplas entrevistas\\n2. PADRÕES - Comportamentos ou opiniões recorrentes\\n3. DIVERGÊNCIAS - Pontos onde os entrevistados discordam\\n4. INSIGHTS - Descobertas surpreendentes ou inesperadas\\n5. CITAÇÕES-CHAVE - Frases marcantes que ilustram os achados\\n\\nOrganize por tema e inclua de qual entrevista veio cada insight.')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Analise as transcrições de entrevista na pasta /transcricoes.
+
+Identifique:
+1. TEMAS PRINCIPAIS - Assuntos que aparecem em múltiplas entrevistas
+2. PADRÕES - Comportamentos ou opiniões recorrentes
+3. DIVERGÊNCIAS - Pontos onde os entrevistados discordam
+4. INSIGHTS - Descobertas surpreendentes ou inesperadas
+5. CITAÇÕES-CHAVE - Frases marcantes que ilustram os achados
+
+Organize por tema e inclua de qual entrevista veio cada insight.</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="tip-box warning">
+                                <span class="tip-icon">⚠️</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Privacidade Importante</div>
+                                    <p>
+                                        Se suas transcrições contêm dados sensíveis, considere
+                                        anonimizar nomes e informações identificáveis antes de
+                                        usar com o Claude.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 5: GERANDO RELATÓRIO -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="e2-5" onclick="event.stopPropagation(); toggleStep('e2-5')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 5</span>
+                                <span class="priority-badge recommended">Recomendado</span>
+                            </div>
+                            <h3 class="step-title">Gerando Relatório Final</h3>
+                            <p class="step-summary">Compile os resultados em documento profissional</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>
+                                Com a análise pronta, peça ao Claude para gerar um relatório
+                                estruturado que você pode apresentar.
+                            </p>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, 'Com base na análise das entrevistas, gere um relatório de pesquisa qualitativa.\\n\\nEstrutura do relatório:\\n1. RESUMO EXECUTIVO (1 página)\\n2. METODOLOGIA (como foi feita a pesquisa)\\n3. PERFIL DOS ENTREVISTADOS (sem identificar)\\n4. PRINCIPAIS ACHADOS (por tema)\\n5. CITAÇÕES ILUSTRATIVAS\\n6. CONCLUSÕES E RECOMENDAÇÕES\\n\\nFormato: Markdown, pronto para exportar para Word.')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Com base na análise das entrevistas, gere um relatório de pesquisa.
+
+Estrutura do relatório:
+1. RESUMO EXECUTIVO (1 página)
+2. METODOLOGIA (como foi feita a pesquisa)
+3. PERFIL DOS ENTREVISTADOS (sem identificar)
+4. PRINCIPAIS ACHADOS (por tema)
+5. CITAÇÕES ILUSTRATIVAS
+6. CONCLUSÕES E RECOMENDAÇÕES
+
+Formato: Markdown, pronto para exportar para Word.</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="tip-box tip">
+                                <span class="tip-icon">💡</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Exportando para Word</div>
+                                    <p>
+                                        Use a trilha J6 (Exportar para Word) para converter o
+                                        relatório Markdown em um documento Word formatado.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box" style="border-left-color: var(--success); background: var(--success-bg); margin-top: var(--space-xl);">
+                    <span class="tip-icon">🎉</span>
+                    <div class="tip-content">
+                        <div class="tip-title">Parabéns!</div>
+                        <p>
+                            Você completou a Trilha de Entrevistas! Agora você sabe criar roteiros,
+                            simular personas, analisar transcrições e gerar relatórios profissionais.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <a class="nav-btn prev" onclick="loadModule('e1')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Anterior
+                    </a>
+                    <a class="nav-btn next" onclick="loadModule('m0')">
+                        Voltar ao Início
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
             `,
-            't1': `<div class="module-header"><h1 class="module-title">Revisão com Codex</h1><p class="module-description">Módulo Extra - Em desenvolvimento...</p></div>`,
-            't2': `<div class="module-header"><h1 class="module-title">🚨 Emergência</h1><p class="module-description">Troubleshooting rápido - Em desenvolvimento...</p></div>`,
+            // ─────────────────────────────────────────────────────────────
+            // T1: REVISÃO DE CÓDIGO COM CLAUDE
+            // ─────────────────────────────────────────────────────────────
+            't1': `
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-link" onclick="loadModule('m0')">Início</a>
+                    <span>›</span>
+                    <span>Extras</span>
+                    <span>›</span>
+                    <span class="breadcrumb-current">Revisão de Código</span>
+                </nav>
+
+                <div class="module-header">
+                    <span class="module-number">Extra 1</span>
+                    <h1 class="module-title">Revisão de Código com Claude</h1>
+                    <p class="module-description">
+                        Aprenda a usar o Claude Code para revisar, melhorar e documentar
+                        código de forma profissional, mesmo sem ser programador.
+                    </p>
+                    <div class="module-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>25 minutos</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <span>Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 1: ENTENDENDO REVISÃO DE CÓDIGO -->
+                <div class="step-card expanded">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t1-1" onclick="event.stopPropagation(); toggleStep('t1-1')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 1</span>
+                                <span class="priority-badge required">Obrigatório</span>
+                            </div>
+                            <h3 class="step-title">O Que É Revisão de Código</h3>
+                            <p class="step-summary">Entenda por que revisar código é importante</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>
+                                <strong>Revisão de código</strong> é o processo de analisar um programa
+                                para encontrar problemas, melhorar a qualidade e garantir que funciona bem.
+                            </p>
+
+                            <div class="glossary-card">
+                                <div class="glossary-term">
+                                    <span class="glossary-icon">🔍</span>
+                                    Code Review
+                                </div>
+                                <p class="glossary-definition">
+                                    Processo de examinar código para encontrar bugs, melhorar legibilidade
+                                    e garantir boas práticas.
+                                </p>
+                                <p class="glossary-analogy">
+                                    Como um editor revisando um texto antes de publicar - encontra erros
+                                    e sugere melhorias.
+                                </p>
+                            </div>
+
+                            <p style="margin-top: var(--space-md);"><strong>O Claude pode ajudar a:</strong></p>
+                            <ul style="margin-left: var(--space-lg);">
+                                <li>Encontrar bugs e erros de lógica</li>
+                                <li>Sugerir melhorias de performance</li>
+                                <li>Melhorar legibilidade do código</li>
+                                <li>Adicionar comentários explicativos</li>
+                                <li>Detectar vulnerabilidades de segurança</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 2: PEDINDO REVISÃO GERAL -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t1-2" onclick="event.stopPropagation(); toggleStep('t1-2')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 2</span>
+                                <span class="priority-badge required">Obrigatório</span>
+                            </div>
+                            <h3 class="step-title">Pedindo Revisão Geral</h3>
+                            <p class="step-summary">Como solicitar uma análise completa</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>Para pedir uma revisão completa do projeto:</p>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, 'Faça uma revisão completa do código deste projeto.\\n\\nAnalise:\\n1. BUGS - Erros que podem causar problemas\\n2. SEGURANÇA - Vulnerabilidades ou riscos\\n3. PERFORMANCE - Código lento ou ineficiente\\n4. LEGIBILIDADE - Código confuso ou mal organizado\\n5. BOAS PRÁTICAS - Padrões não seguidos\\n\\nPara cada problema encontrado, explique:\\n- O que está errado\\n- Por que é um problema\\n- Como corrigir (com exemplo)')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Faça uma revisão completa do código deste projeto.
+
+Analise:
+1. BUGS - Erros que podem causar problemas
+2. SEGURANÇA - Vulnerabilidades ou riscos
+3. PERFORMANCE - Código lento ou ineficiente
+4. LEGIBILIDADE - Código confuso ou mal organizado
+5. BOAS PRÁTICAS - Padrões não seguidos
+
+Para cada problema encontrado, explique:
+- O que está errado
+- Por que é um problema
+- Como corrigir (com exemplo)</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="tip-box tip">
+                                <span class="tip-icon">💡</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Revisão por Arquivo</div>
+                                    <p>
+                                        Em projetos grandes, peça revisão de arquivos específicos:
+                                        "Revise o arquivo src/main.py focando em segurança"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 3: DOCUMENTAÇÃO AUTOMÁTICA -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t1-3" onclick="event.stopPropagation(); toggleStep('t1-3')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 3</span>
+                                <span class="priority-badge highly">Importante</span>
+                            </div>
+                            <h3 class="step-title">Documentação Automática</h3>
+                            <p class="step-summary">Gere comentários e documentação para o código</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>
+                                Código bem documentado é mais fácil de entender e manter. Peça ao
+                                Claude para adicionar documentação:
+                            </p>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, 'Adicione documentação ao código deste projeto:\\n\\n1. Comentários explicativos nas funções complexas\\n2. Docstrings/JSDoc em todas as funções\\n3. Atualize o README.md com:\\n   - Descrição do projeto\\n   - Como instalar\\n   - Como usar\\n   - Exemplos\\n\\nMantenha os comentários concisos e úteis.')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Adicione documentação ao código deste projeto:
+
+1. Comentários explicativos nas funções complexas
+2. Docstrings/JSDoc em todas as funções
+3. Atualize o README.md com:
+   - Descrição do projeto
+   - Como instalar
+   - Como usar
+   - Exemplos
+
+Mantenha os comentários concisos e úteis.</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 4: EXPLICAÇÃO DE CÓDIGO -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t1-4" onclick="event.stopPropagation(); toggleStep('t1-4')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 4</span>
+                                <span class="priority-badge recommended">Recomendado</span>
+                            </div>
+                            <h3 class="step-title">Explicação de Código</h3>
+                            <p class="step-summary">Entenda código que você não escreveu</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>
+                                Precisa entender código de outra pessoa? O Claude explica linha por linha:
+                            </p>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, 'Explique este código para um iniciante:\\n\\n1. O que cada arquivo faz\\n2. Como as partes se conectam\\n3. O fluxo de execução (o que acontece quando roda)\\n4. Termos técnicos usados (explique cada um)\\n\\nUse linguagem simples, como se estivesse explicando para alguém que nunca programou.')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Explique este código para um iniciante:
+
+1. O que cada arquivo faz
+2. Como as partes se conectam
+3. O fluxo de execução (o que acontece quando roda)
+4. Termos técnicos usados (explique cada um)
+
+Use linguagem simples, como se estivesse explicando
+para alguém que nunca programou.</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="tip-box tip">
+                                <span class="tip-icon">💡</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Para Trecho Específico</div>
+                                    <p>
+                                        Selecione o código no VS Code e pergunte: "Explique o que
+                                        esse código selecionado faz"
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASSO 5: REFATORAÇÃO -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t1-5" onclick="event.stopPropagation(); toggleStep('t1-5')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 5</span>
+                                <span class="priority-badge optional">Opcional</span>
+                            </div>
+                            <h3 class="step-title">Refatoração Automática</h3>
+                            <p class="step-summary">Melhore a estrutura sem mudar o comportamento</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <div class="glossary-card">
+                                <div class="glossary-term">
+                                    <span class="glossary-icon">🔄</span>
+                                    Refatoração
+                                </div>
+                                <p class="glossary-definition">
+                                    Melhorar a estrutura do código sem alterar o que ele faz.
+                                </p>
+                                <p class="glossary-analogy">
+                                    Como reorganizar um armário - as roupas são as mesmas, mas ficam
+                                    mais fáceis de encontrar.
+                                </p>
+                            </div>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, 'Refatore este código para melhorar a qualidade:\\n\\n1. Simplifique funções muito longas\\n2. Remova código duplicado\\n3. Melhore nomes de variáveis\\n4. Organize em módulos lógicos\\n5. Aplique padrões de design apropriados\\n\\nIMPORTANTE: Não altere o comportamento do código, apenas a estrutura.')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Refatore este código para melhorar a qualidade:
+
+1. Simplifique funções muito longas
+2. Remova código duplicado
+3. Melhore nomes de variáveis
+4. Organize em módulos lógicos
+5. Aplique padrões de design apropriados
+
+IMPORTANTE: Não altere o comportamento, apenas a estrutura.</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="tip-box warning">
+                                <span class="tip-icon">⚠️</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Faça Backup Antes</div>
+                                    <p>
+                                        Refatorações grandes podem introduzir bugs. Sempre faça
+                                        backup ou use controle de versão (git) antes de refatorar.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <a class="nav-btn prev" onclick="loadModule('m0')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Voltar ao Início
+                    </a>
+                    <a class="nav-btn next" onclick="loadModule('t2')">
+                        Próximo: Troubleshooting
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            `,
+
+            // ─────────────────────────────────────────────────────────────
+            // T2: TROUBLESHOOTING DE EMERGÊNCIA
+            // ─────────────────────────────────────────────────────────────
+            't2': `
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-link" onclick="loadModule('m0')">Início</a>
+                    <span>›</span>
+                    <span>Extras</span>
+                    <span>›</span>
+                    <span class="breadcrumb-current">Troubleshooting</span>
+                </nav>
+
+                <div class="module-header">
+                    <span class="module-number">Extra 2</span>
+                    <h1 class="module-title">Troubleshooting de Emergência</h1>
+                    <p class="module-description">
+                        Guia rápido para resolver os problemas mais comuns do Claude Code.
+                        Consulte aqui quando algo der errado.
+                    </p>
+                    <div class="module-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>15 minutos</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <span>Referência</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROBLEMA 1: CLAUDE NÃO RESPONDE -->
+                <div class="step-card expanded">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t2-1" onclick="event.stopPropagation(); toggleStep('t2-1')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Problema 1</span>
+                                <span class="priority-badge required" style="background: var(--error-bg); color: var(--error);">Comum</span>
+                            </div>
+                            <h3 class="step-title">Claude Não Responde ou Trava</h3>
+                            <p class="step-summary">O que fazer quando o Claude para de funcionar</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p><strong>Sintomas:</strong> Claude fica pensando infinitamente, não responde, ou mostra erro de conexão.</p>
+
+                            <p style="margin-top: var(--space-md);"><strong>Soluções (tente na ordem):</strong></p>
+
+                            <div class="tip-box tip" style="margin-bottom: var(--space-sm);">
+                                <span class="tip-icon">1️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Pressione Escape</div>
+                                    <p>Cancela a operação atual. Se estava travado, deve voltar ao normal.</p>
+                                </div>
+                            </div>
+
+                            <div class="tip-box tip" style="margin-bottom: var(--space-sm);">
+                                <span class="tip-icon">2️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Use /clear</div>
+                                    <p>Limpa a conversa atual. Resolve muitos problemas de contexto confuso.</p>
+                                </div>
+                            </div>
+
+                            <div class="tip-box tip" style="margin-bottom: var(--space-sm);">
+                                <span class="tip-icon">3️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Reinicie o VS Code</div>
+                                    <p>Feche e abra novamente. Resolve problemas de extensão travada.</p>
+                                </div>
+                            </div>
+
+                            <div class="tip-box warning">
+                                <span class="tip-icon">4️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Verifique sua Internet</div>
+                                    <p>O Claude precisa de conexão. Teste abrindo um site no navegador.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROBLEMA 2: ERRO DE AUTENTICAÇÃO -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t2-2" onclick="event.stopPropagation(); toggleStep('t2-2')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Problema 2</span>
+                                <span class="priority-badge required" style="background: var(--error-bg); color: var(--error);">Comum</span>
+                            </div>
+                            <h3 class="step-title">Erro de Autenticação ou Login</h3>
+                            <p class="step-summary">"Não autorizado", "Token expirado", erro de login</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p><strong>Sintomas:</strong> Mensagens de erro sobre login, token, ou autorização.</p>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, '/login')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>/login</code></pre>
+                                </div>
+                            </div>
+
+                            <p>Se não funcionar, faça logout e login novamente:</p>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, '/logout')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>/logout</code></pre>
+                                </div>
+                            </div>
+
+                            <div class="tip-box warning">
+                                <span class="tip-icon">⚠️</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Verifique Sua Assinatura</div>
+                                    <p>
+                                        Acesse <strong>claude.ai</strong> no navegador e confirme se sua
+                                        assinatura Pro ou Max está ativa e não expirou.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROBLEMA 3: LIMITE DE USO -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t2-3" onclick="event.stopPropagation(); toggleStep('t2-3')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Problema 3</span>
+                                <span class="priority-badge highly">Frequente</span>
+                            </div>
+                            <h3 class="step-title">Limite de Uso Atingido</h3>
+                            <p class="step-summary">"Rate limit", cota excedida, muitas requisições</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p><strong>Sintomas:</strong> Mensagens sobre limite, cota, ou "rate limit exceeded".</p>
+
+                            <p style="margin-top: var(--space-md);"><strong>O que fazer:</strong></p>
+
+                            <div class="tip-box tip" style="margin-bottom: var(--space-sm);">
+                                <span class="tip-icon">⏰</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Aguarde um Pouco</div>
+                                    <p>O limite reseta a cada hora. Espere 30-60 minutos e tente novamente.</p>
+                                </div>
+                            </div>
+
+                            <div class="tip-box tip" style="margin-bottom: var(--space-sm);">
+                                <span class="tip-icon">🔄</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Troque o Modelo</div>
+                                    <p>
+                                        Use <strong>/model sonnet</strong> ou <strong>/model haiku</strong>
+                                        que têm limites separados e maiores.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                    <button class="code-copy" onclick="copyCode(this, '/cost')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                                        </svg>
+                                        Copiar
+                                    </button>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>/cost</code></pre>
+                                </div>
+                            </div>
+                            <p style="font-size: 0.9rem; color: var(--text-tertiary);">
+                                Use /cost para ver quanto você já usou da cota.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROBLEMA 4: ARQUIVO NÃO ENCONTRADO -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t2-4" onclick="event.stopPropagation(); toggleStep('t2-4')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Problema 4</span>
+                                <span class="priority-badge recommended">Iniciante</span>
+                            </div>
+                            <h3 class="step-title">Claude Não Encontra Arquivos</h3>
+                            <p class="step-summary">"Arquivo não existe", "não encontrei"</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p><strong>Causa mais comum:</strong> A pasta errada está aberta no VS Code.</p>
+
+                            <div class="tip-box warning">
+                                <span class="tip-icon">📁</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Verifique a Pasta Aberta</div>
+                                    <p>
+                                        Olhe no topo do VS Code. O nome da pasta deve ser a do seu projeto.
+                                        Se não for, use <strong>File > Open Folder</strong> para abrir a pasta correta.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p style="margin-top: var(--space-md);"><strong>Outras causas:</strong></p>
+                            <ul style="margin-left: var(--space-lg);">
+                                <li>Nome do arquivo digitado errado (maiúsculas/minúsculas importam)</li>
+                                <li>Arquivo está em uma subpasta</li>
+                                <li>Arquivo foi deletado ou movido</li>
+                            </ul>
+
+                            <div class="tip-box tip" style="margin-top: var(--space-md);">
+                                <span class="tip-icon">💡</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Peça para Listar</div>
+                                    <p>
+                                        Diga ao Claude: "Liste todos os arquivos desta pasta" para ver
+                                        o que ele consegue acessar.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROBLEMA 5: RESPOSTAS ERRADAS -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t2-5" onclick="event.stopPropagation(); toggleStep('t2-5')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Problema 5</span>
+                                <span class="priority-badge optional">Qualidade</span>
+                            </div>
+                            <h3 class="step-title">Respostas Erradas ou Confusas</h3>
+                            <p class="step-summary">Claude faz coisa errada ou não entende</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p><strong>Causa comum:</strong> Contexto poluído de conversas anteriores.</p>
+
+                            <div class="tip-box tip" style="margin-bottom: var(--space-sm);">
+                                <span class="tip-icon">1️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Use /clear e Reformule</div>
+                                    <p>Limpe a conversa e faça o pedido novamente, de forma mais clara.</p>
+                                </div>
+                            </div>
+
+                            <div class="tip-box tip" style="margin-bottom: var(--space-sm);">
+                                <span class="tip-icon">2️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Seja Mais Específico</div>
+                                    <p>
+                                        Em vez de "arrume isso", diga exatamente o que quer:
+                                        "No arquivo X, na linha Y, mude Z para W".
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="tip-box tip" style="margin-bottom: var(--space-sm);">
+                                <span class="tip-icon">3️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Use Modo Plan</div>
+                                    <p>
+                                        Pressione <strong>Shift+Tab</strong> até ver "Plan". O Claude
+                                        vai planejar antes de agir, mostrando o que pretende fazer.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="tip-box warning">
+                                <span class="tip-icon">4️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Troque para Opus</div>
+                                    <p>
+                                        Use <strong>/model opus</strong> para tarefas complexas.
+                                        É mais inteligente (mas gasta mais cota).
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROBLEMA 6: REINSTALAÇÃO -->
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t2-6" onclick="event.stopPropagation(); toggleStep('t2-6')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Problema 6</span>
+                                <span class="priority-badge required" style="background: var(--error-bg); color: var(--error);">Último Recurso</span>
+                            </div>
+                            <h3 class="step-title">Reinstalação Completa</h3>
+                            <p class="step-summary">Quando nada mais funciona</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>Se nenhuma solução funcionou, reinstale a extensão:</p>
+
+                            <ol style="margin-left: var(--space-lg);">
+                                <li style="margin-bottom: var(--space-sm);">
+                                    Abra as extensões no VS Code (Ctrl+Shift+X)
+                                </li>
+                                <li style="margin-bottom: var(--space-sm);">
+                                    Procure "Claude" e clique em <strong>Desinstalar</strong>
+                                </li>
+                                <li style="margin-bottom: var(--space-sm);">
+                                    Reinicie o VS Code
+                                </li>
+                                <li style="margin-bottom: var(--space-sm);">
+                                    Instale novamente a extensão Claude Code
+                                </li>
+                                <li>
+                                    Faça login com /login
+                                </li>
+                            </ol>
+
+                            <div class="tip-box" style="border-left-color: var(--success); background: var(--success-bg); margin-top: var(--space-lg);">
+                                <span class="tip-icon">💚</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Ainda com Problemas?</div>
+                                    <p>
+                                        Reporte em <strong>github.com/anthropics/claude-code/issues</strong>
+                                        descrevendo o problema e o que você já tentou.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <a class="nav-btn prev" onclick="loadModule('t1')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Anterior
+                    </a>
+                    <a class="nav-btn next" onclick="loadModule('m0')">
+                        Voltar ao Início
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            `,
 
             // ─────────────────────────────────────────────────────────────
             // AG1: O QUE SÃO AGENTES GENERATIVOS
