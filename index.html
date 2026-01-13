@@ -2026,13 +2026,37 @@
                     <li class="nav-item">
                         <a class="nav-link" data-module="t1" onclick="loadModule('t1')">
                             <span class="nav-status">○</span>
-                            <span>Revisão com Codex</span>
+                            <span>T1. Revisão de Código</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-module="t2" onclick="loadModule('t2')">
                             <span class="nav-status">○</span>
-                            <span>🚨 Emergência</span>
+                            <span>T2. Troubleshooting</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-module="t3" onclick="loadModule('t3')">
+                            <span class="nav-status">○</span>
+                            <span>T3. Prompts Avançados</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-module="t4" onclick="loadModule('t4')">
+                            <span class="nav-status">○</span>
+                            <span>T4. Git e Versionamento</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-module="t5" onclick="loadModule('t5')">
+                            <span class="nav-status">○</span>
+                            <span>T5. Automação de Tarefas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-module="t6" onclick="loadModule('t6')">
+                            <span class="nav-status">○</span>
+                            <span>T6. Hooks e Integrações</span>
                         </a>
                     </li>
                 </ul>
@@ -8145,6 +8169,1107 @@ claude auth login</code></pre>
             `,
 
             // ─────────────────────────────────────────────────────────────
+            // T3: PROMPTS AVANÇADOS
+            // ─────────────────────────────────────────────────────────────
+            't3': `
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-link" onclick="loadModule('m0')">Início</a>
+                    <span>›</span>
+                    <span style="color: var(--accent-primary);">Extras</span>
+                    <span>›</span>
+                    <span class="breadcrumb-current">Prompts Avançados</span>
+                </nav>
+
+                <div class="module-header" style="border-left: 4px solid var(--accent-primary); padding-left: var(--space-md);">
+                    <span class="module-number" style="color: var(--accent-primary);">T3</span>
+                    <h1 class="module-title">Engenharia de Prompts Avançada</h1>
+                    <p class="module-description">
+                        Aprenda técnicas profissionais para escrever prompts que geram
+                        resultados consistentes e de alta qualidade.
+                    </p>
+                    <div class="module-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>30 minutos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card expanded">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t3-1" onclick="event.stopPropagation(); toggleStep('t3-1')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 1</span>
+                                <span class="priority-badge required">Obrigatório</span>
+                            </div>
+                            <h3 class="step-title">Estrutura de um Bom Prompt</h3>
+                            <p class="step-summary">Os 5 elementos essenciais</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>Um prompt eficaz tem 5 elementos:</p>
+                            <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                                <span class="tip-icon">1️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Contexto</div>
+                                    <p>Quem você é e qual é a situação. Ex: "Você é um advogado trabalhista sênior..."</p>
+                                </div>
+                            </div>
+                            <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                                <span class="tip-icon">2️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Tarefa</div>
+                                    <p>O que exatamente você quer. Ex: "Analise esta petição e identifique pontos fracos..."</p>
+                                </div>
+                            </div>
+                            <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                                <span class="tip-icon">3️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Formato</div>
+                                    <p>Como quer a resposta. Ex: "Responda em formato de lista numerada..."</p>
+                                </div>
+                            </div>
+                            <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                                <span class="tip-icon">4️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Restrições</div>
+                                    <p>O que NÃO fazer. Ex: "Não use jargões técnicos, explique para leigo..."</p>
+                                </div>
+                            </div>
+                            <div class="tip-box tip">
+                                <span class="tip-icon">5️⃣</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Exemplos</div>
+                                    <p>Mostre o que espera. Ex: "Exemplo de saída esperada: ..."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t3-2" onclick="event.stopPropagation(); toggleStep('t3-2')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 2</span>
+                                <span class="priority-badge highly">Importante</span>
+                            </div>
+                            <h3 class="step-title">Técnica Chain-of-Thought</h3>
+                            <p class="step-summary">Faça o Claude pensar passo a passo</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>Para problemas complexos, peça raciocínio explícito:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Prompt com Chain-of-Thought</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Analise este contrato de locação.
+
+IMPORTANTE: Antes de dar sua conclusão final:
+1. Liste todos os elementos presentes no contrato
+2. Identifique o que está faltando segundo a lei do inquilinato
+3. Analise cada cláusula quanto à legalidade
+4. ENTÃO apresente sua conclusão
+
+Pense passo a passo e mostre seu raciocínio.</code></pre>
+                                </div>
+                            </div>
+                            <div class="tip-box tip">
+                                <span class="tip-icon">💡</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Por que funciona?</div>
+                                    <p>Forçar o Claude a "pensar em voz alta" reduz erros e aumenta a qualidade da análise.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t3-3" onclick="event.stopPropagation(); toggleStep('t3-3')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 3</span>
+                                <span class="priority-badge recommended">Recomendado</span>
+                            </div>
+                            <h3 class="step-title">Few-Shot Learning</h3>
+                            <p class="step-summary">Ensine com exemplos</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>Mostre exemplos do que você quer:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Prompt com Exemplos</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Classifique o sentimento do texto como POSITIVO, NEGATIVO ou NEUTRO.
+
+Exemplos:
+Texto: "Adorei o atendimento, voltarei com certeza!"
+Classificação: POSITIVO
+
+Texto: "O produto chegou quebrado e ninguém resolve"
+Classificação: NEGATIVO
+
+Texto: "Recebi o pedido ontem"
+Classificação: NEUTRO
+
+Agora classifique:
+Texto: "O prazo de entrega foi respeitado, mas a embalagem veio amassada"
+Classificação:</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t3-4" onclick="event.stopPropagation(); toggleStep('t3-4')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 4</span>
+                                <span class="priority-badge required">Obrigatório</span>
+                            </div>
+                            <h3 class="step-title">Prompts Negativos</h3>
+                            <p class="step-summary">Diga o que NÃO quer</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>Às vezes é mais fácil dizer o que você NÃO quer:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Prompt com Restrições</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Escreva uma carta de apresentação profissional.
+
+NÃO FAÇA:
+- Não use clichês como "sou proativo" ou "trabalho em equipe"
+- Não repita informações do currículo
+- Não use mais de 3 parágrafos
+- Não comece com "Venho por meio desta"
+- Não termine com "Atenciosamente"
+
+FAÇA:
+- Use tom profissional mas natural
+- Foque em resultados específicos
+- Mostre personalidade</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAREFA PRÁTICA -->
+                <div class="pratica-card" id="pratica-t3-prompts">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">🎯</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática Obrigatória</h4>
+                            <p>Criar prompt estruturado com 5 elementos</p>
+                        </div>
+                        <span class="pratica-badge">+95 XP</span>
+                    </div>
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <p><strong>O que você deve fazer:</strong></p>
+                            <ol>
+                                <li>Escolha uma tarefa que você faz no trabalho</li>
+                                <li>Escreva um prompt usando os 5 elementos (Contexto, Tarefa, Formato, Restrições, Exemplos)</li>
+                                <li>Teste o prompt e compare com um prompt simples</li>
+                            </ol>
+                            <p><strong>Evidência necessária:</strong></p>
+                            <p>Cole seu prompt estruturado e descreva a diferença de qualidade.</p>
+                        </div>
+                        <div class="pratica-submit">
+                            <textarea class="pratica-textarea" placeholder="Meu prompt estruturado:&#10;&#10;Contexto: ...&#10;Tarefa: ...&#10;Formato: ...&#10;Restrições: ...&#10;Exemplo: ..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn submit" onclick="submitPratica('t3-prompts')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn help" onclick="askCoachAboutPratica('t3-prompts')">
+                                    🤔 Pedir Ajuda ao Coach
+                                </button>
+                            </div>
+                        </div>
+                        <div class="pratica-status pending">
+                            <span class="status-icon">⏳</span>
+                            <span class="status-text">Aguardando sua submissão</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <a class="nav-btn prev" onclick="loadModule('t2')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Anterior
+                    </a>
+                    <a class="nav-btn next" onclick="loadModule('t4')">
+                        Próximo: Git e Versionamento
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            `,
+
+            // ─────────────────────────────────────────────────────────────
+            // T4: GIT E VERSIONAMENTO
+            // ─────────────────────────────────────────────────────────────
+            't4': `
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-link" onclick="loadModule('m0')">Início</a>
+                    <span>›</span>
+                    <span style="color: var(--accent-primary);">Extras</span>
+                    <span>›</span>
+                    <span class="breadcrumb-current">Git e Versionamento</span>
+                </nav>
+
+                <div class="module-header" style="border-left: 4px solid var(--accent-primary); padding-left: var(--space-md);">
+                    <span class="module-number" style="color: var(--accent-primary);">T4</span>
+                    <h1 class="module-title">Git com Claude Code</h1>
+                    <p class="module-description">
+                        Use o Claude Code para gerenciar seus projetos com Git de forma
+                        simples e sem decorar comandos.
+                    </p>
+                    <div class="module-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>25 minutos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card expanded">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t4-1" onclick="event.stopPropagation(); toggleStep('t4-1')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 1</span>
+                                <span class="priority-badge required">Obrigatório</span>
+                            </div>
+                            <h3 class="step-title">Iniciar Repositório</h3>
+                            <p class="step-summary">Crie seu primeiro repo com ajuda do Claude</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>Em vez de decorar comandos, peça ao Claude:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Inicialize um repositório Git nesta pasta.
+Crie um .gitignore apropriado para projetos JavaScript.
+Faça o primeiro commit com a mensagem "Configuração inicial".</code></pre>
+                                </div>
+                            </div>
+                            <div class="tip-box tip">
+                                <span class="tip-icon">💡</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Sem decorar comandos!</div>
+                                    <p>O Claude sabe todos os comandos Git. Você só precisa dizer o que quer fazer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t4-2" onclick="event.stopPropagation(); toggleStep('t4-2')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 2</span>
+                                <span class="priority-badge highly">Importante</span>
+                            </div>
+                            <h3 class="step-title">Commits Inteligentes</h3>
+                            <p class="step-summary">Deixe o Claude escrever mensagens de commit</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Veja o que mudou desde o último commit.
+Crie um commit com uma mensagem descritiva que explique
+o que foi alterado e por quê.</code></pre>
+                                </div>
+                            </div>
+                            <p style="margin-top: var(--space-md);">O Claude vai:</p>
+                            <ul style="margin-left: var(--space-lg);">
+                                <li>Analisar as diferenças (git diff)</li>
+                                <li>Entender o contexto das mudanças</li>
+                                <li>Escrever uma mensagem clara e profissional</li>
+                                <li>Fazer o commit por você</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t4-3" onclick="event.stopPropagation(); toggleStep('t4-3')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 3</span>
+                                <span class="priority-badge recommended">Recomendado</span>
+                            </div>
+                            <h3 class="step-title">Resolver Conflitos</h3>
+                            <p class="step-summary">Use o Claude para resolver merge conflicts</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>Quando há conflito de merge, peça ajuda:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Estou tentando fazer merge da branch "feature-x" na main.
+Há conflitos. Analise os conflitos e resolva mantendo
+as funcionalidades de ambas as versões quando possível.</code></pre>
+                                </div>
+                            </div>
+                            <div class="tip-box warning">
+                                <span class="tip-icon">⚠️</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Sempre revise!</div>
+                                    <p>O Claude pode resolver conflitos automaticamente, mas sempre revise o resultado antes de confirmar.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t4-4" onclick="event.stopPropagation(); toggleStep('t4-4')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 4</span>
+                                <span class="priority-badge recommended">Recomendado</span>
+                            </div>
+                            <h3 class="step-title">Comandos Úteis</h3>
+                            <p class="step-summary">O que você pode pedir ao Claude</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <ul style="margin-left: var(--space-lg);">
+                                <li>"Mostre o histórico dos últimos 10 commits"</li>
+                                <li>"Quem alterou este arquivo e quando?"</li>
+                                <li>"Crie uma branch para corrigir o bug X"</li>
+                                <li>"Desfaça as alterações do último commit mas mantenha os arquivos"</li>
+                                <li>"Conecte este repositório ao GitHub e faça push"</li>
+                                <li>"Liste todas as branches e mostre qual estou"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAREFA PRÁTICA -->
+                <div class="pratica-card" id="pratica-t4-git">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">🎯</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática Obrigatória</h4>
+                            <p>Fazer commit com ajuda do Claude</p>
+                        </div>
+                        <span class="pratica-badge">+90 XP</span>
+                    </div>
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <p><strong>O que você deve fazer:</strong></p>
+                            <ol>
+                                <li>Crie ou modifique um arquivo em qualquer projeto</li>
+                                <li>Peça ao Claude para ver as mudanças e fazer o commit</li>
+                                <li>Cole a mensagem de commit que ele gerou</li>
+                            </ol>
+                            <p><strong>Evidência necessária:</strong></p>
+                            <p>Cole a mensagem de commit gerada pelo Claude.</p>
+                        </div>
+                        <div class="pratica-submit">
+                            <textarea class="pratica-textarea" placeholder="Mensagem de commit gerada pelo Claude:&#10;&#10;..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn submit" onclick="submitPratica('t4-git')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn help" onclick="askCoachAboutPratica('t4-git')">
+                                    🤔 Pedir Ajuda ao Coach
+                                </button>
+                            </div>
+                        </div>
+                        <div class="pratica-status pending">
+                            <span class="status-icon">⏳</span>
+                            <span class="status-text">Aguardando sua submissão</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <a class="nav-btn prev" onclick="loadModule('t3')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Anterior
+                    </a>
+                    <a class="nav-btn next" onclick="loadModule('t5')">
+                        Próximo: Automação de Tarefas
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            `,
+
+            // ─────────────────────────────────────────────────────────────
+            // T5: AUTOMAÇÃO DE TAREFAS
+            // ─────────────────────────────────────────────────────────────
+            't5': `
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-link" onclick="loadModule('m0')">Início</a>
+                    <span>›</span>
+                    <span style="color: var(--accent-primary);">Extras</span>
+                    <span>›</span>
+                    <span class="breadcrumb-current">Automação</span>
+                </nav>
+
+                <div class="module-header" style="border-left: 4px solid var(--accent-primary); padding-left: var(--space-md);">
+                    <span class="module-number" style="color: var(--accent-primary);">T5</span>
+                    <h1 class="module-title">Automação de Tarefas</h1>
+                    <p class="module-description">
+                        Aprenda a automatizar tarefas repetitivas usando o Claude Code.
+                        Economize horas de trabalho manual.
+                    </p>
+                    <div class="module-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>30 minutos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card expanded">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t5-1" onclick="event.stopPropagation(); toggleStep('t5-1')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 1</span>
+                                <span class="priority-badge required">Obrigatório</span>
+                            </div>
+                            <h3 class="step-title">Identificar Tarefas Repetitivas</h3>
+                            <p class="step-summary">O que pode ser automatizado</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>Tarefas ideais para automação:</p>
+                            <ul style="margin-left: var(--space-lg);">
+                                <li>Renomear muitos arquivos de uma vez</li>
+                                <li>Converter formatos (CSV para JSON, DOC para PDF)</li>
+                                <li>Organizar arquivos em pastas por data/tipo</li>
+                                <li>Extrair dados de documentos</li>
+                                <li>Gerar relatórios padronizados</li>
+                                <li>Processar lotes de imagens</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t5-2" onclick="event.stopPropagation(); toggleStep('t5-2')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 2</span>
+                                <span class="priority-badge highly">Importante</span>
+                            </div>
+                            <h3 class="step-title">Automação de Arquivos</h3>
+                            <p class="step-summary">Organize centenas de arquivos em segundos</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code - Organizar Arquivos</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Na pasta Downloads, organize os arquivos assim:
+- PDFs vão para pasta "Documentos"
+- Imagens (jpg, png) vão para "Imagens"
+- Vídeos (mp4, avi) vão para "Videos"
+- O restante vai para "Outros"
+
+Crie as pastas se não existirem.
+Mantenha um log do que foi movido.</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t5-3" onclick="event.stopPropagation(); toggleStep('t5-3')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 3</span>
+                                <span class="priority-badge recommended">Recomendado</span>
+                            </div>
+                            <h3 class="step-title">Processamento em Lote</h3>
+                            <p class="step-summary">Processe muitos arquivos de uma vez</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code - Renomear em Lote</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Na pasta "fotos-evento", renomeie todos os arquivos seguindo o padrão:
+evento-2026-01-12-001.jpg, evento-2026-01-12-002.jpg, etc.
+
+Mantenha a ordem alfabética original.
+Mostre quantos arquivos foram renomeados.</code></pre>
+                                </div>
+                            </div>
+                            <div class="code-block" style="margin-top: var(--space-md);">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code - Extrair Dados</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Na pasta "notas-fiscais", extraia de cada PDF:
+- Número da nota
+- Data
+- Valor total
+- CNPJ do emissor
+
+Salve tudo em uma planilha notas-fiscais.csv</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t5-4" onclick="event.stopPropagation(); toggleStep('t5-4')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 4</span>
+                                <span class="priority-badge recommended">Recomendado</span>
+                            </div>
+                            <h3 class="step-title">Geração de Relatórios</h3>
+                            <p class="step-summary">Automatize relatórios periódicos</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">Claude Code - Gerar Relatório</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>Leia os arquivos da pasta "vendas-janeiro" e gere um relatório com:
+- Total de vendas
+- Produto mais vendido
+- Dia com mais vendas
+- Comparação com mês anterior (se houver dados)
+- Gráfico simples em ASCII
+
+Salve como relatorio-janeiro-2026.md</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAREFA PRÁTICA -->
+                <div class="pratica-card" id="pratica-t5-auto">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">🎯</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática Obrigatória</h4>
+                            <p>Automatizar uma tarefa real do seu dia a dia</p>
+                        </div>
+                        <span class="pratica-badge">+100 XP</span>
+                    </div>
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <p><strong>O que você deve fazer:</strong></p>
+                            <ol>
+                                <li>Identifique uma tarefa repetitiva que você faz</li>
+                                <li>Peça ao Claude para automatizar essa tarefa</li>
+                                <li>Execute a automação e documente o resultado</li>
+                            </ol>
+                            <p><strong>Evidência necessária:</strong></p>
+                            <p>Descreva a tarefa automatizada e quanto tempo economizou.</p>
+                        </div>
+                        <div class="pratica-submit">
+                            <textarea class="pratica-textarea" placeholder="Tarefa automatizada: ...&#10;&#10;Como pedi ao Claude: ...&#10;&#10;Tempo economizado: ..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn submit" onclick="submitPratica('t5-auto')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn help" onclick="askCoachAboutPratica('t5-auto')">
+                                    🤔 Pedir Ajuda ao Coach
+                                </button>
+                            </div>
+                        </div>
+                        <div class="pratica-status pending">
+                            <span class="status-icon">⏳</span>
+                            <span class="status-text">Aguardando sua submissão</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <a class="nav-btn prev" onclick="loadModule('t4')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Anterior
+                    </a>
+                    <a class="nav-btn next" onclick="loadModule('t6')">
+                        Próximo: Hooks e Integrações
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            `,
+
+            // ─────────────────────────────────────────────────────────────
+            // T6: HOOKS E INTEGRAÇÕES
+            // ─────────────────────────────────────────────────────────────
+            't6': `
+                <nav class="breadcrumb">
+                    <a class="breadcrumb-link" onclick="loadModule('m0')">Início</a>
+                    <span>›</span>
+                    <span style="color: var(--accent-primary);">Extras</span>
+                    <span>›</span>
+                    <span class="breadcrumb-current">Hooks e Integrações</span>
+                </nav>
+
+                <div class="module-header" style="border-left: 4px solid var(--accent-primary); padding-left: var(--space-md);">
+                    <span class="module-number" style="color: var(--accent-primary);">T6</span>
+                    <h1 class="module-title">Hooks e Integrações Avançadas</h1>
+                    <p class="module-description">
+                        Configure hooks para executar ações automáticas e integre o Claude Code
+                        com outras ferramentas do seu workflow.
+                    </p>
+                    <div class="module-meta">
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span>35 minutos</span>
+                        </div>
+                        <div class="meta-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            <span>Avançado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card expanded">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t6-1" onclick="event.stopPropagation(); toggleStep('t6-1')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 1</span>
+                                <span class="priority-badge required">Obrigatório</span>
+                            </div>
+                            <h3 class="step-title">O Que São Hooks?</h3>
+                            <p class="step-summary">Ações automáticas em eventos</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <div class="glossary-card">
+                                <div class="glossary-term">
+                                    <span class="glossary-icon">🪝</span>
+                                    Hook (Gancho)
+                                </div>
+                                <p class="glossary-definition">
+                                    É um comando que roda automaticamente quando algo acontece.
+                                    Por exemplo: toda vez que o Claude modificar um arquivo, rodar os testes.
+                                </p>
+                            </div>
+                            <p style="margin-top: var(--space-md);">Tipos de hooks disponíveis:</p>
+                            <ul style="margin-left: var(--space-lg);">
+                                <li><strong>PreToolUse</strong> — Antes de usar uma ferramenta</li>
+                                <li><strong>PostToolUse</strong> — Depois de usar uma ferramenta</li>
+                                <li><strong>Stop</strong> — Quando o Claude termina</li>
+                                <li><strong>Notification</strong> — Para notificações</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t6-2" onclick="event.stopPropagation(); toggleStep('t6-2')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 2</span>
+                                <span class="priority-badge highly">Importante</span>
+                            </div>
+                            <h3 class="step-title">Configurar um Hook</h3>
+                            <p class="step-summary">Crie seu primeiro hook</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p>Crie um arquivo <code>.claude/settings.json</code> no projeto:</p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">.claude/settings.json</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm test"
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+                                </div>
+                            </div>
+                            <div class="tip-box tip">
+                                <span class="tip-icon">💡</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">O que isso faz?</div>
+                                    <p>Toda vez que o Claude editar ou criar um arquivo, os testes serão executados automaticamente!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t6-3" onclick="event.stopPropagation(); toggleStep('t6-3')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 3</span>
+                                <span class="priority-badge recommended">Recomendado</span>
+                            </div>
+                            <h3 class="step-title">Hooks Úteis para o Dia a Dia</h3>
+                            <p class="step-summary">Exemplos práticos</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <p><strong>Formatar código automaticamente:</strong></p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">settings.json</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit.*\\.js$",
+        "hooks": [{ "type": "command", "command": "npx prettier --write" }]
+      }
+    ]
+  }
+}</code></pre>
+                                </div>
+                            </div>
+
+                            <p style="margin-top: var(--space-lg);"><strong>Notificação quando terminar:</strong></p>
+                            <div class="code-block">
+                                <div class="code-header">
+                                    <span class="code-lang">settings.json</span>
+                                </div>
+                                <div class="code-content">
+                                    <pre><code>{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "notify-send 'Claude terminou!'" }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card-header" onclick="toggleCard(this)">
+                        <div class="step-checkbox" data-step="t6-4" onclick="event.stopPropagation(); toggleStep('t6-4')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5"/>
+                            </svg>
+                        </div>
+                        <div class="step-info">
+                            <div class="step-header-row">
+                                <span class="step-number">Passo 4</span>
+                                <span class="priority-badge recommended">Recomendado</span>
+                            </div>
+                            <h3 class="step-title">Integrações Populares</h3>
+                            <p class="step-summary">Conecte com outras ferramentas</p>
+                        </div>
+                        <div class="step-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="step-card-body">
+                        <div class="step-content">
+                            <ul style="margin-left: var(--space-lg);">
+                                <li><strong>VS Code</strong> — Use a extensão Claude para VS Code</li>
+                                <li><strong>GitHub</strong> — Crie PRs e issues automaticamente</li>
+                                <li><strong>Slack/Discord</strong> — Envie notificações via webhooks</li>
+                                <li><strong>Jira/Trello</strong> — Atualize tickets automaticamente</li>
+                                <li><strong>CI/CD</strong> — Integre com GitHub Actions, GitLab CI</li>
+                            </ul>
+                            <div class="tip-box tip" style="margin-top: var(--space-md);">
+                                <span class="tip-icon">💡</span>
+                                <div class="tip-content">
+                                    <div class="tip-title">Dica Pro</div>
+                                    <p>Combine hooks com MCPs para criar workflows poderosos. Ex: MCP do Slack + hook PostToolUse = notificação automática quando código muda.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAREFA PRÁTICA -->
+                <div class="pratica-card" id="pratica-t6-hooks">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">🎯</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática Obrigatória</h4>
+                            <p>Configurar um hook funcional</p>
+                        </div>
+                        <span class="pratica-badge">+110 XP</span>
+                    </div>
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <p><strong>O que você deve fazer:</strong></p>
+                            <ol>
+                                <li>Crie o arquivo .claude/settings.json em algum projeto</li>
+                                <li>Configure um hook (pode ser um simples que só mostra mensagem)</li>
+                                <li>Faça o Claude editar um arquivo para disparar o hook</li>
+                            </ol>
+                            <p><strong>Evidência necessária:</strong></p>
+                            <p>Cole o conteúdo do seu settings.json e descreva o que aconteceu.</p>
+                        </div>
+                        <div class="pratica-submit">
+                            <textarea class="pratica-textarea" placeholder="Meu settings.json:&#10;&#10;{...}&#10;&#10;O que aconteceu quando o hook disparou: ..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn submit" onclick="submitPratica('t6-hooks')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn help" onclick="askCoachAboutPratica('t6-hooks')">
+                                    🤔 Pedir Ajuda ao Coach
+                                </button>
+                            </div>
+                        </div>
+                        <div class="pratica-status pending">
+                            <span class="status-icon">⏳</span>
+                            <span class="status-text">Aguardando sua submissão</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tip-box" style="border-left-color: var(--success); background: var(--success-bg); margin-top: var(--space-xl);">
+                    <span class="tip-icon">🎉</span>
+                    <div class="tip-content">
+                        <div class="tip-title">Parabéns!</div>
+                        <p>Você completou todos os módulos extras! Agora você domina técnicas avançadas de prompts, Git, automação e integrações.</p>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <a class="nav-btn prev" onclick="loadModule('t5')">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        Anterior
+                    </a>
+                    <a class="nav-btn next" onclick="loadModule('m0')">
+                        Voltar ao Início
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            `,
+
+            // ─────────────────────────────────────────────────────────────
             // AG1: O QUE SÃO AGENTES GENERATIVOS
             // ─────────────────────────────────────────────────────────────
             'ag1': `
@@ -10837,7 +11962,7 @@ Pode avaliar se fiz certo?`;
                 titulo: 'Criar Roteiro e Personas',
                 descricao: 'Crie um roteiro de entrevista e simule com uma persona.'
             },
-            // Módulos Extras - T1 a T2
+            // Módulos Extras - T1 a T6
             't1-review': {
                 titulo: 'Code Review com IA',
                 descricao: 'Peça ao Claude para revisar seu código e aplicar sugestões.'
@@ -10845,6 +11970,22 @@ Pode avaliar se fiz certo?`;
             't2-trouble': {
                 titulo: 'Resolver Problema',
                 descricao: 'Use a técnica de diagnóstico para resolver um problema com o Claude.'
+            },
+            't3-prompts': {
+                titulo: 'Prompt Estruturado',
+                descricao: 'Crie um prompt usando os 5 elementos: Contexto, Tarefa, Formato, Restrições e Exemplos.'
+            },
+            't4-git': {
+                titulo: 'Commit com Claude',
+                descricao: 'Faça um commit usando o Claude para analisar mudanças e escrever a mensagem.'
+            },
+            't5-auto': {
+                titulo: 'Automatizar Tarefa',
+                descricao: 'Automatize uma tarefa repetitiva do seu dia a dia com o Claude.'
+            },
+            't6-hooks': {
+                titulo: 'Configurar Hook',
+                descricao: 'Configure um hook no settings.json e faça-o disparar.'
             }
         };
 
