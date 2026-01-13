@@ -4443,6 +4443,63 @@ em formato estruturado para análise posterior.</code></pre>
                     </div>
                 </div>
 
+                <!-- TAREFA PRÁTICA: TESTAR MODELOS -->
+                <div class="pratica-card" id="pratica-m4-modelos">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">🧪</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática: Teste os Diferentes Modelos</h4>
+                            <p>Compare Haiku, Sonnet e Opus na prática!</p>
+                        </div>
+                        <span class="pratica-badge">+60 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Faça a MESMA pergunta para 2 modelos diferentes</li>
+                                <li>Use: <code>claude --model haiku "Sua pergunta"</code></li>
+                                <li>Depois: <code>claude --model sonnet "Mesma pergunta"</code></li>
+                                <li>Compare as respostas e anote as diferenças</li>
+                                <li>Cole ambas as respostas abaixo</li>
+                            </ol>
+                        </div>
+
+                        <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-content">
+                                <div class="tip-title">Sugestão de Pergunta</div>
+                                <p>Use algo como: "Explique o que é inteligência artificial em 3 frases" - isso permite comparar qualidade e profundidade.</p>
+                            </div>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole as respostas de cada modelo e suas observações:</label>
+                            <textarea class="pratica-textarea" placeholder="MODELO HAIKU:\n[Cole a resposta aqui]\n\nMODELO SONNET:\n[Cole a resposta aqui]\n\nMINHAS OBSERVAÇÕES:\n- O Haiku foi mais...\n- O Sonnet foi mais..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('m4-modelos')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('m4-modelos')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">⏳</span>
+                            <span class="pratica-status-text">Teste na prática para entender quando usar cada modelo!</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Qual a diferença entre Haiku e Sonnet?';">Haiku vs Sonnet</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Quando devo usar o Opus?';">Quando usar Opus?</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Como economizar tokens?';">Economizar tokens</button>
+                    </div>
+                </div>
+
                 <div class="nav-buttons">
                     <a class="nav-btn prev" onclick="loadModule('m3')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -4674,6 +4731,63 @@ em formato estruturado para análise posterior.</code></pre>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- TAREFA PRÁTICA: ESTRUTURA JURÍDICA -->
+                <div class="pratica-card" id="pratica-j1-estrutura">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">⚖️</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática: Crie sua Estrutura de Pastas</h4>
+                            <p>Organize seu escritório virtual com Claude!</p>
+                        </div>
+                        <span class="pratica-badge">+80 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Crie uma pasta para seu escritório: <code>mkdir MeuEscritorio</code></li>
+                                <li>Entre na pasta: <code>cd MeuEscritorio</code></li>
+                                <li>Inicie o Claude: <code>claude</code></li>
+                                <li>Peça: "Crie uma estrutura de pastas para um escritório de advocacia com áreas: civil, trabalhista e família"</li>
+                                <li>Cole a estrutura criada e mostre o resultado de <code>tree</code> ou <code>ls -R</code></li>
+                            </ol>
+                        </div>
+
+                        <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-content">
+                                <div class="tip-title">Personalize sua área!</div>
+                                <p>Se você trabalha com outra área (tributário, penal, empresarial), peça ao Claude para criar a estrutura adequada para você.</p>
+                            </div>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole a estrutura de pastas criada:</label>
+                            <textarea class="pratica-textarea" placeholder="Cole aqui a saída do comando tree ou ls -R mostrando as pastas criadas.\n\nExemplo:\nMeuEscritorio/\n├── Civil/\n│   ├── Contratos/\n│   ├── Execuções/\n│   └── Indenizações/\n├── Trabalhista/\n│   ├── Reclamações/\n│   └── Recursos/\n└── templates/"></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('j1-estrutura')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('j1-estrutura')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">⏳</span>
+                            <span class="pratica-status-text">Organize seu escritório e ganhe eficiência!</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Como criar pastas pelo terminal?';">Criar pastas</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='O que é o comando tree?';">Comando tree</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Estrutura para escritório tributário';">Outras áreas</button>
                     </div>
                 </div>
 
@@ -8227,6 +8341,67 @@ Inclua:
                     </div>
                 </div>
 
+                <!-- TAREFA PRÁTICA: CRIAR MÚLTIPLOS AGENTES -->
+                <div class="pratica-card" id="pratica-ag3-multiplos">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">👥</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática: Crie 3 Agentes Diferentes</h4>
+                            <p>Simule perspectivas diversas sobre um tema!</p>
+                        </div>
+                        <span class="pratica-badge">+120 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Escolha um tema polêmico (ex: trabalho remoto, IA na educação, etc)</li>
+                                <li>Crie 3 agentes com perfis DIFERENTES:</li>
+                                <ul style="margin-left: 20px; margin-bottom: 10px;">
+                                    <li>Um jovem (18-25 anos)</li>
+                                    <li>Um adulto (40-55 anos)</li>
+                                    <li>Um idoso (65+ anos)</li>
+                                </ul>
+                                <li>Faça a MESMA pergunta para os 3 agentes</li>
+                                <li>Cole as 3 respostas e suas observações sobre as diferenças</li>
+                            </ol>
+                        </div>
+
+                        <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-content">
+                                <div class="tip-title">Exemplo de Prompt</div>
+                                <p>"Crie 3 agentes: João (22 anos, estudante de TI), Maria (48 anos, gerente de RH), e José (70 anos, aposentado). Pergunte a cada um: O que você acha de trabalhar 100% home office?"</p>
+                            </div>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole as respostas dos 3 agentes e suas observações:</label>
+                            <textarea class="pratica-textarea" placeholder="AGENTE 1 (Jovem):\nNome: João, 22 anos\nResposta: ...\n\nAGENTE 2 (Adulto):\nNome: Maria, 48 anos\nResposta: ...\n\nAGENTE 3 (Idoso):\nNome: José, 70 anos\nResposta: ...\n\nMINHAS OBSERVAÇÕES:\n- A principal diferença foi...\n- O jovem focou mais em...\n- O idoso mencionou..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('ag3-multiplos')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('ag3-multiplos')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">⏳</span>
+                            <span class="pratica-status-text">Explore como diferentes perspectivas geram diferentes respostas!</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Me dê ideias de temas polêmicos para testar';">Ideias de temas</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Como diferenciar bem os agentes?';">Diferenciar agentes</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Os agentes estão respondendo igual, o que fazer?';">Respostas iguais</button>
+                    </div>
+                </div>
+
                 <div class="nav-buttons">
                     <a class="nav-btn prev" onclick="loadModule('ag2')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -8822,6 +8997,63 @@ Inclua análise:
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- TAREFA PRÁTICA: CONDUZIR ENTREVISTA -->
+                <div class="pratica-card" id="pratica-ag5-entrevista">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">🎤</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática: Conduza uma Entrevista Completa</h4>
+                            <p>Entreviste um agente e extraia insights!</p>
+                        </div>
+                        <span class="pratica-badge">+150 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Crie um agente com perfil bem definido (use o template Stanford)</li>
+                                <li>Prepare 5 perguntas para entrevistar esse agente</li>
+                                <li>Conduza a entrevista usando o Claude</li>
+                                <li>Faça pelo menos 1 pergunta de follow-up baseada nas respostas</li>
+                                <li>Cole a entrevista completa abaixo</li>
+                            </ol>
+                        </div>
+
+                        <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-content">
+                                <div class="tip-title">Dicas para uma boa entrevista</div>
+                                <p>Use perguntas abertas ("O que você acha..."), evite induzir respostas, e peça exemplos concretos quando possível.</p>
+                            </div>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole a entrevista completa (perfil do agente + perguntas + respostas):</label>
+                            <textarea class="pratica-textarea" placeholder="PERFIL DO AGENTE:\nNome: Ana Costa\nIdade: 32 anos\nProfissão: Professora de ensino fundamental\nLocalização: Taguatinga/DF\n...\n\nENTREVISTA:\n\nP1: Como você avalia a qualidade do ensino público atual?\nR: ...\n\nP2: O que você mudaria se pudesse?\nR: ...\n\nP3 (follow-up): Você mencionou X, pode dar um exemplo?\nR: ..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('ag5-entrevista')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('ag5-entrevista')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">⏳</span>
+                            <span class="pratica-status-text">Pratique suas habilidades de entrevistador!</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Me dê exemplos de perguntas para entrevista';">Exemplos de perguntas</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='O que é pergunta de follow-up?';">Follow-up</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='O agente está dando respostas genéricas';">Respostas genéricas</button>
                     </div>
                 </div>
 
@@ -9476,22 +9708,35 @@ Pode avaliar se fiz certo?`;
 
         // Info das práticas do curso
         const PRATICAS_INFO = {
+            // Módulo 2 - Instalação
             'p1-instalacao': {
-                titulo: 'Verificar Instalação do Node.js',
-                descricao: 'Execute "node --version" e "npm --version" no terminal e cole o resultado.'
+                titulo: 'Verificar Instalação Completa',
+                descricao: 'Execute "node --version", "npm --version" e "claude --version" no terminal e cole o resultado.'
             },
             'p1-claude': {
                 titulo: 'Instalar Claude Code',
                 descricao: 'Execute "npm install -g @anthropic-ai/claude-code" e cole o resultado.'
             },
+            // Módulo 3 - Primeira Sessão
             'p2-primeiro-comando': {
                 titulo: 'Primeiro Comando Claude',
                 descricao: 'Execute "claude --help" e cole a saída.'
             },
             'p2-conversa': {
-                titulo: 'Primeira Conversa',
-                descricao: 'Inicie uma sessão com "claude" e peça algo simples. Cole a interação.'
+                titulo: 'Primeira Conversa com Claude',
+                descricao: 'Inicie uma sessão com "claude" e peça algo simples. Cole a interação completa.'
             },
+            // Módulo 4 - Custos e Modelos
+            'm4-modelos': {
+                titulo: 'Testar Diferentes Modelos',
+                descricao: 'Compare as respostas de Haiku e Sonnet para a mesma pergunta.'
+            },
+            // Trilha Jurídica
+            'j1-estrutura': {
+                titulo: 'Criar Estrutura de Pastas Jurídicas',
+                descricao: 'Use o Claude para criar uma estrutura de pastas organizada para seu escritório.'
+            },
+            // Módulo de Configuração
             'p3-claude-md': {
                 titulo: 'Criar CLAUDE.md',
                 descricao: 'Crie um arquivo CLAUDE.md na raiz do seu projeto com suas configurações.'
@@ -9500,17 +9745,24 @@ Pode avaliar se fiz certo?`;
                 titulo: 'Configurar VS Code',
                 descricao: 'Configure a extensão do Claude Code no VS Code e tire um print ou descreva.'
             },
+            // Trilha Agentes - AG1
             'ag1-agente': {
                 titulo: 'Criar Primeiro Agente',
-                descricao: 'Crie um agente simples seguindo o template do curso.'
+                descricao: 'Crie um agente com nome, idade, profissão, personalidade e simule uma resposta.'
             },
             'ag2-persona': {
-                titulo: 'Definir Persona',
-                descricao: 'Crie uma persona completa para um agente com características definidas.'
+                titulo: 'Definir Persona Completa',
+                descricao: 'Crie uma persona detalhada usando a arquitetura Stanford.'
             },
-            'ag3-entrevista': {
-                titulo: 'Conduzir Entrevista',
-                descricao: 'Execute uma entrevista com seu agente e cole o resultado.'
+            // Trilha Agentes - AG3
+            'ag3-multiplos': {
+                titulo: 'Criar 3 Agentes Diferentes',
+                descricao: 'Crie 3 agentes com perfis diferentes (jovem, adulto, idoso) e compare respostas.'
+            },
+            // Trilha Agentes - AG5
+            'ag5-entrevista': {
+                titulo: 'Conduzir Entrevista Completa',
+                descricao: 'Entreviste um agente com 5 perguntas + follow-ups e analise as respostas.'
             }
         };
 
