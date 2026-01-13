@@ -5014,6 +5014,67 @@ IMPORTANTE: Deixe claro que são informações de treinamento e o advogado deve 
                     </div>
                 </div>
 
+                <!-- TAREFA PRÁTICA: COMANDOS JURÍDICOS -->
+                <div class="pratica-card" id="pratica-j2-comandos">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">⚡</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática: Configure seus Comandos</h4>
+                            <p>Crie atalhos personalizados para seu trabalho!</p>
+                        </div>
+                        <span class="pratica-badge">+90 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Crie um arquivo CLAUDE.md na pasta do seu escritório</li>
+                                <li>Adicione pelo menos 3 comandos personalizados, exemplo:</li>
+                                <ul style="margin-left: 20px; margin-bottom: 10px;">
+                                    <li><code>/peticao</code> - Para criar petições</li>
+                                    <li><code>/contrato</code> - Para analisar contratos</li>
+                                    <li><code>/resumo</code> - Para resumir documentos</li>
+                                </ul>
+                                <li>Teste um dos comandos criados</li>
+                                <li>Cole o conteúdo do CLAUDE.md e o resultado do teste</li>
+                            </ol>
+                        </div>
+
+                        <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-content">
+                                <div class="tip-title">Exemplo de CLAUDE.md</div>
+                                <p>Defina instruções como: "Quando eu usar /peticao, pergunte o tipo de ação, partes envolvidas e fatos principais antes de redigir."</p>
+                            </div>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole seu CLAUDE.md e o resultado do teste:</label>
+                            <textarea class="pratica-textarea" placeholder="CONTEÚDO DO CLAUDE.md:\n# Comandos do Escritório\n\n## /peticao\nQuando eu usar este comando...\n\n## /contrato\n...\n\nTESTE DO COMANDO:\n> /peticao\n\nClaude: Qual o tipo de ação?..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('j2-comandos')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('j2-comandos')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">⏳</span>
+                            <span class="pratica-status-text">Automatize seu trabalho com comandos personalizados!</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Como criar um arquivo CLAUDE.md?';">Criar CLAUDE.md</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Exemplos de comandos para advogados';">Exemplos jurídicos</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='O comando não está funcionando';">Não funciona</button>
+                    </div>
+                </div>
+
                 <div class="nav-buttons">
                     <a class="nav-btn prev" onclick="loadModule('j1')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -7981,6 +8042,68 @@ O BRT vive lotado e os horários não batem."</code></pre>
                     </div>
                 </div>
 
+                <!-- TAREFA PRÁTICA: ARQUITETURA STANFORD -->
+                <div class="pratica-card" id="pratica-ag2-stanford">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">🏛️</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática: Crie uma Persona Stanford</h4>
+                            <p>Aplique a arquitetura completa de agentes!</p>
+                        </div>
+                        <span class="pratica-badge">+110 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Escolha um perfil de pessoa real do seu círculo (sem usar nome real)</li>
+                                <li>Crie uma persona completa usando a arquitetura Stanford:</li>
+                                <ul style="margin-left: 20px; margin-bottom: 10px;">
+                                    <li><strong>Dados demográficos:</strong> idade, gênero, localização, renda</li>
+                                    <li><strong>Traços de personalidade:</strong> 3-5 características</li>
+                                    <li><strong>Memória:</strong> experiências passadas relevantes</li>
+                                    <li><strong>Reflexão:</strong> como essa pessoa pensa sobre decisões</li>
+                                </ul>
+                                <li>Faça uma pergunta complexa e veja a resposta</li>
+                                <li>Cole a persona completa + pergunta + resposta</li>
+                            </ol>
+                        </div>
+
+                        <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-content">
+                                <div class="tip-title">Quanto mais detalhes, melhor!</div>
+                                <p>Uma persona com "João, 30 anos, engenheiro" é fraca. Uma persona com memórias, medos, experiências passadas e forma de pensar é muito mais realista.</p>
+                            </div>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole sua persona Stanford completa:</label>
+                            <textarea class="pratica-textarea" placeholder="PERSONA STANFORD:\n\n## Dados Demográficos\n- Nome: Carlos Mendes\n- Idade: 45 anos\n- Gênero: Masculino\n- Localização: Ceilândia/DF\n- Renda familiar: R$ 4.500/mês\n- Escolaridade: Ensino médio completo\n\n## Traços de Personalidade\n- Pragmático e desconfiado\n- Valoriza família acima de tudo\n- Prefere soluções práticas\n\n## Memória\n- Perdeu emprego em 2020 durante a pandemia\n- Conseguiu se reinventar como motorista de app\n- Filho mais velho entrou na UnB\n\n## Reflexão\n- Antes de decidir, sempre pensa: 'isso vai funcionar na prática?'\n\nPERGUNTA: O que você acha de...\n\nRESPOSTA: ..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('ag2-stanford')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('ag2-stanford')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">⏳</span>
+                            <span class="pratica-status-text">Crie uma persona realista e veja a diferença nas respostas!</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Me explique a arquitetura Stanford';">O que é Stanford?</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Exemplos de memórias para agentes';">Exemplos de memória</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Como criar traços de personalidade realistas?';">Personalidade</button>
+                    </div>
+                </div>
+
                 <div class="nav-buttons">
                     <a class="nav-btn prev" onclick="loadModule('ag1')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -8700,6 +8823,69 @@ provavelmente não é empresário; um jovem do Plano Piloto tem perfil diferente
                     </div>
                 </div>
 
+                <!-- TAREFA PRÁTICA: SIMULAÇÃO DE ELEITORES -->
+                <div class="pratica-card" id="pratica-ag4-eleitores">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">🗳️</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Prática: Simule 5 Eleitores</h4>
+                            <p>Crie um mini painel eleitoral diversificado!</p>
+                        </div>
+                        <span class="pratica-badge">+130 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Crie 5 eleitores do DF com perfis diversos:</li>
+                                <ul style="margin-left: 20px; margin-bottom: 10px;">
+                                    <li>1 de classe alta (Lago Sul/Plano Piloto)</li>
+                                    <li>1 de classe média (Águas Claras/Taguatinga)</li>
+                                    <li>1 de classe baixa (Ceilândia/Estrutural)</li>
+                                    <li>1 jovem (18-25 anos)</li>
+                                    <li>1 idoso (60+ anos)</li>
+                                </ul>
+                                <li>Faça a mesma pergunta para todos: "Qual o maior problema do DF hoje?"</li>
+                                <li>Analise as diferenças nas respostas</li>
+                                <li>Cole os 5 perfis + respostas + sua análise</li>
+                            </ol>
+                        </div>
+
+                        <div class="tip-box tip" style="margin-bottom: var(--space-md);">
+                            <span class="tip-icon">💡</span>
+                            <div class="tip-content">
+                                <div class="tip-title">Use dados reais do DF!</div>
+                                <p>Considere: transporte público, segurança, saúde, emprego, moradia. Cada região tem prioridades diferentes.</p>
+                            </div>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole os 5 perfis, respostas e sua análise:</label>
+                            <textarea class="pratica-textarea" placeholder="ELEITOR 1 (Lago Sul):\nNome: Ricardo, 52 anos, empresário\nResposta: O maior problema é...\n\nELEITOR 2 (Taguatinga):\nNome: Fernanda, 38 anos, professora\nResposta: ...\n\nELEITOR 3 (Ceilândia):\nNome: José, 45 anos, pedreiro\nResposta: ...\n\nELEITOR 4 (Jovem):\nNome: Lucas, 22 anos, universitário\nResposta: ...\n\nELEITOR 5 (Idoso):\nNome: Dona Maria, 68 anos, aposentada\nResposta: ...\n\nMINHA ANÁLISE:\n- A classe alta focou em...\n- A periferia mencionou...\n- Os jovens se preocupam com..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('ag4-eleitores')">
+                                    ✅ Enviar para Avaliação
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('ag4-eleitores')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">⏳</span>
+                            <span class="pratica-status-text">Entenda como diferentes perfis pensam diferente!</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Quais são as regiões do DF?';">Regiões do DF</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Renda média por região do DF';">Renda por região</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Como criar perfis realistas de eleitores?';">Perfis realistas</button>
+                    </div>
+                </div>
+
                 <div class="nav-buttons">
                     <a class="nav-btn prev" onclick="loadModule('ag3')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -9335,6 +9521,68 @@ Salve em resultados/relatorio-qualitativo.md</code></pre>
                     </div>
                 </div>
 
+                <!-- TAREFA PRÁTICA FINAL: RELATÓRIO DE ANÁLISE -->
+                <div class="pratica-card" id="pratica-ag6-relatorio">
+                    <div class="pratica-header">
+                        <div class="pratica-icon">📊</div>
+                        <div class="pratica-title">
+                            <h4>Tarefa Final: Crie um Relatório de Análise</h4>
+                            <p>Consolide tudo que você aprendeu!</p>
+                        </div>
+                        <span class="pratica-badge">+200 XP</span>
+                    </div>
+
+                    <div class="pratica-content">
+                        <div class="pratica-instrucoes">
+                            <h5>📋 O que você precisa fazer:</h5>
+                            <ol>
+                                <li>Use os dados das práticas anteriores (seus 5 eleitores)</li>
+                                <li>Peça ao Claude para analisar os padrões encontrados</li>
+                                <li>Crie um relatório com:</li>
+                                <ul style="margin-left: 20px; margin-bottom: 10px;">
+                                    <li><strong>Resumo executivo:</strong> principais descobertas em 3 frases</li>
+                                    <li><strong>Padrões identificados:</strong> o que cada grupo prioriza</li>
+                                    <li><strong>Recomendações:</strong> 3 ações baseadas nos dados</li>
+                                    <li><strong>Limitações:</strong> reconheça que é uma simulação</li>
+                                </ul>
+                                <li>Cole o relatório completo</li>
+                            </ol>
+                        </div>
+
+                        <div class="tip-box warning" style="margin-bottom: var(--space-md);">
+                            <span class="tip-icon">⚠️</span>
+                            <div class="tip-content">
+                                <div class="tip-title">Lembre-se!</div>
+                                <p>Agentes são simulações, não pesquisas reais. Sempre inclua essa ressalva em qualquer relatório.</p>
+                            </div>
+                        </div>
+
+                        <div class="pratica-submit">
+                            <label>Cole seu relatório de análise final:</label>
+                            <textarea class="pratica-textarea" placeholder="RELATÓRIO DE ANÁLISE - SIMULAÇÃO ELEITORAL DF\n\n## RESUMO EXECUTIVO\n1. A principal preocupação transversal é...\n2. Existe clara divisão entre...\n3. O tema que mais unifica é...\n\n## PADRÕES POR SEGMENTO\n\n### Classe Alta (Plano Piloto)\n- Priorizam: segurança, mobilidade\n- Estão dispostos a: pagar mais impostos se...\n\n### Classe Baixa (Ceilândia/Estrutural)\n- Priorizam: emprego, transporte público\n- Sentem que: são esquecidos...\n\n### Jovens\n- Priorizam: educação, oportunidades\n- Querem: mais tecnologia...\n\n## RECOMENDAÇÕES\n1. ...\n2. ...\n3. ...\n\n## LIMITAÇÕES\nEste é um estudo simulado usando agentes de IA..."></textarea>
+                            <div class="pratica-actions">
+                                <button class="pratica-btn primary" onclick="submitPratica('ag6-relatorio')">
+                                    ✅ Enviar para Avaliação Final
+                                </button>
+                                <button class="pratica-btn secondary" onclick="askCoachAboutPratica('ag6-relatorio')">
+                                    🤔 Preciso de Ajuda
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pratica-status pending">
+                            <span class="pratica-status-icon">🏆</span>
+                            <span class="pratica-status-text">Complete esta tarefa para receber o certificado de conclusão!</span>
+                        </div>
+                    </div>
+
+                    <div class="pratica-quick-actions">
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Como estruturar um relatório de análise?';">Estrutura relatório</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Me ajude a identificar padrões nos dados';">Identificar padrões</button>
+                        <button class="quick-action-btn" onclick="toggleCoach(); document.getElementById('coachInput').value='Como escrever limitações éticas?';">Limitações éticas</button>
+                    </div>
+                </div>
+
                 <div class="nav-buttons">
                     <a class="nav-btn prev" onclick="loadModule('ag5')">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -9763,6 +10011,26 @@ Pode avaliar se fiz certo?`;
             'ag5-entrevista': {
                 titulo: 'Conduzir Entrevista Completa',
                 descricao: 'Entreviste um agente com 5 perguntas + follow-ups e analise as respostas.'
+            },
+            // Trilha Jurídica - J2
+            'j2-comandos': {
+                titulo: 'Configurar Comandos Personalizados',
+                descricao: 'Crie um CLAUDE.md com 3 comandos personalizados para seu escritório.'
+            },
+            // Trilha Agentes - AG2
+            'ag2-stanford': {
+                titulo: 'Criar Persona Stanford Completa',
+                descricao: 'Aplique a arquitetura Stanford: dados demográficos, traços, memória e reflexão.'
+            },
+            // Trilha Agentes - AG4
+            'ag4-eleitores': {
+                titulo: 'Simular 5 Eleitores do DF',
+                descricao: 'Crie 5 eleitores de diferentes regiões/classes e compare suas prioridades.'
+            },
+            // Trilha Agentes - AG6 (Final)
+            'ag6-relatorio': {
+                titulo: 'Relatório de Análise Final',
+                descricao: 'Consolide os dados em um relatório com padrões, recomendações e limitações.'
             }
         };
 
